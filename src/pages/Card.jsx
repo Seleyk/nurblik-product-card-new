@@ -1,5 +1,5 @@
 import React from 'react';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Card = () => {
@@ -7,7 +7,7 @@ const Card = () => {
   
   return (
     <div className="h-[100vh] flex items-center justify-center">
-      <div className="flex flex-col gap-1">
+      <motion.div className="flex flex-col gap-1" exit={{ x: -450 }} transition={{delay: .72, ...transition}}>
         <Link to={"/details"}>
           <div className="h-[40vh] w-[40vh] overflow-hidden rounded-xl cursor-pointer">
             <motion.img
@@ -27,7 +27,7 @@ const Card = () => {
         >
           <p className="mr-auto">Steven Seley</p> <p>T-Shirt</p>
         </motion.span>
-      </div>
+      </motion.div>
     </div>
   );
 }
