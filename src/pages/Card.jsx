@@ -7,7 +7,12 @@ const Card = () => {
   
   return (
     <div className="h-[100vh] flex items-center justify-center">
-      <motion.div className="flex flex-col gap-1" exit={{ x: -450 }} transition={{delay: .72, ...transition}}>
+      <motion.div
+        className="flex flex-col gap-1"
+        exit={{ x: -450 }}
+        whileInView={{ y: [50, 0], opacity: [0, 1] }}
+        transition={{ delay: 0.72, ...transition }}
+      >
         <Link to={"/details"}>
           <div className="h-[40vh] w-[40vh] overflow-hidden rounded-xl cursor-pointer">
             <motion.img
