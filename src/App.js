@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <AnimatePresence>
+        <AnimatePresence initial={false} mode='wait'>
             <Routes>
                 <Route path="/" element={<Card />} />
                 <Route path="/details" element={<Details />} />
