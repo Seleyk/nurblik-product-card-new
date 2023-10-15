@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const Card = () => {
+const SingleCard = () => {
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
   
   return (
@@ -30,11 +30,11 @@ const Card = () => {
           transition={transition}
           className="flex flex-row px-2"
         >
-          <p className="mr-auto">Steven Seley</p> <p>T-Shirt</p>
+          <p className="mr-auto">T-Shirt</p> <p>49.95</p>
         </motion.span>
       </motion.div>
     </div>
   );
 }
 
-export default Card
+export default SingleCard

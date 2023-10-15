@@ -38,9 +38,9 @@ const Details = () => {
           className="text-center p-8 flex flex-col gap-4"
         >
           <motion.div className="text-6xl font-montserrat font-semibold uppercase">
-            Steven Seley
+            T-Shirt
           </motion.div>
-          <motion.div className="text-xl font-medium uppercase">T-shirt</motion.div>
+          <motion.div className="text-xl font-medium uppercase">$49.95</motion.div>
         </motion.div>
       </div>
     </div>
