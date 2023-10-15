@@ -15,11 +15,13 @@ const Details = () => {
             width: "40vh",
             height: "40vh",
             borderRadius: '.75rem',
+            scale: 1.2
           }}
           animate={{
             height: "100vh",
             width: "100%",
             borderRadius: 0,
+            scale: 1
           }}
           className=" overflow-hidden"
           transition={transition}

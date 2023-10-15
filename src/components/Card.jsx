@@ -7,7 +7,7 @@ const Card = ({ item }) => {
   return (
     <motion.div
       layout
-      className="flex flex-col gap-1"
+      className="flex flex-col gap-1ite"
       exit={{ x: -450 }}
       whileInView={{ y: [50, 0], opacity: [0, 1] }}
       transition={{ delay: 0.06, ...transition }}

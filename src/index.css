@@ -10,3 +10,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
+
+  .item {
+    @apply max-w-[350px] p-8 bg-[#f2f2f2]
+  }
