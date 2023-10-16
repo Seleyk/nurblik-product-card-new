@@ -7,7 +7,7 @@ const Card = ({ item }) => {
   return (
     <motion.div
       layout
-      className="flex flex-col gap-1ite"
+      className="flex flex-col gap-1"
       exit={{ x: -450 }}
       whileInView={{ y: [50, 0], opacity: [0, 1] }}
       transition={{ delay: 0.06, ...transition }}
@@ -27,7 +27,7 @@ const Card = ({ item }) => {
         transition={transition}
         className="flex flex-row px-2"
       >
-        <p className="mr-auto">T-Shirt</p> <p>49.95</p>
+        <p className="mr-auto">{item.title}</p> <p>${`${item.price / 100}`}</p>
       </motion.span>
     </motion.div>
   );
