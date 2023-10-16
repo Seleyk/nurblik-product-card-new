@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { items } from '../data';
 
 const Details = () => {
-  const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
+  const transition = { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
     <div className="grid grid-cols-[40rem_auto] h-[100vh]">
@@ -12,8 +13,8 @@ const Details = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            width: "40vh",
-            height: "40vh",
+            width: "350px",
+            height: "380px",
             borderRadius: '.75rem',
             scale: 1.2
           }}
@@ -28,7 +29,7 @@ const Details = () => {
         >
           <motion.img
             className="w-full h-full object-cover"
-            src="https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU="
+            src={items[1].img}
             alt=" T-shirt"
           />
         </motion.div>
