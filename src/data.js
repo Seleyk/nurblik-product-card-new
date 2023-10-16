@@ -61,37 +61,37 @@ export const items = [
     },
     {
         id: 11,
-        img: 'https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU=',
+        img: 'https://i.pinimg.com/1200x/2f/8c/e8/2f8ce8e2d056870ae6c2304d4c17efad.jpg',
         title: 'T-shirt',
         price: 5466
     },
     {
         id: 12,
-        img: 'https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU=',
+        img: 'https://i.pinimg.com/564x/83/03/08/83030884037f5f0f34bc8eb073ccd44d.jpg',
         title: 'T-shirt',
         price: 4565
     },
     {
         id: 13,
-        img: 'https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU=',
+        img: 'https://i.pinimg.com/originals/36/63/fa/3663faf438c436cf1f2f1336f0560cd6.jpg',
         title: 'T-shirt',
         price: 4562
     },
     {
         id: 14,
-        img: 'https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU=',
+        img: 'https://i.pinimg.com/736x/db/8e/9b/db8e9b65ce18725fababa4a53be2c099.jpg',
         title: 'T-shirt',
         price: 4862
     },
     {
         id: 15,
-        img: 'https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU=',
+        img: 'https://i.pinimg.com/564x/bd/6c/c6/bd6cc69e1ff6019ec7f4039dd0ccc861.jpg',
         title: 'T-shirt',
         price: 59655
     },
     {
         id: 16,
-        img: 'https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU=',
+        img: 'https://i.pinimg.com/564x/5e/34/b4/5e34b400b89ddcae552ef5715de276a4.jpg',
         title: 'T-shirt',
         price: 4582
     },
