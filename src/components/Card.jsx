@@ -12,11 +12,11 @@ const Card = ({ item }) => {
       whileInView={{ y: [50, 0], opacity: [0, 1] }}
       transition={{ delay: 0.06, ...transition }}
     >
-      <div className="h-[40vh] w-[40vh] overflow-hidden rounded-xl cursor-pointer">
+      <div className="h-[380px] max-w-[350px] overflow-hidden rounded-xl cursor-pointer">
         <motion.img
           whileHover={{ scale: 1.2 }}
           className="w-full h-30vh object-cover rounded-xl"
-          src="https://media.istockphoto.com/id/1180368138/photo/visualization-of-a-blank-t-shirt-on-a-body-without-a-man-with-shadows-on-white-background.jpg?s=612x612&w=0&k=20&c=fK4-v_piYs75-FOT4HFCwdILkH__df43g3Lh6EkorxU="
+          src={item.img}
           alt=" T-shirt"
           transition={transition}
         />
@@ -25,9 +25,9 @@ const Card = ({ item }) => {
       <motion.span
         exit={{ opacity: 0 }}
         transition={transition}
-        className="flex flex-row px-2"
+        className="flex flex-col px-2"
       >
-        <p className="mr-auto">{item.title}</p> <p>${`${item.price / 100}`}</p>
+        <p className="mr-auto font-medium">{item.title}</p> <p>${`${item.price / 100}`}</p>
       </motion.span>
     </motion.div>
   );

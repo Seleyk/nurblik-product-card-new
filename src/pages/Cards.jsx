@@ -13,7 +13,7 @@ const Cards = () => {
       </div>
       <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {items.map((item) => (
-          <motion.div layout className="max-w-[40vh]">
+          <motion.div layout className="">
             <Card item={item} key={item.id} />
           </motion.div>
         ))}
