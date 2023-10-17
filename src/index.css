@@ -16,7 +16,7 @@
   }
 
   .container {
-    @apply flex items-center justify-between
+    @apply flex items-start justify-between
   }
 
   .menu {
