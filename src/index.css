@@ -14,3 +14,65 @@
   .item {
     @apply max-w-[350px] p-8 bg-[#f2f2f2]
   }
+
+  .container {
+    @apply flex items-center justify-between
+  }
+
+  .menu {
+    width: 120px;
+}
+  
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 0.75rem;;
+}
+
+li {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    cursor: pointer;
+}
+
+ul {
+  position: absolute;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+}
+
+li:hover {
+    color: rgb(212, 212, 212);
+    transition: 0.9s;
+}
+
+button {
+    background: #fff;
+    color: #000;
+    border: 1px solid;
+    border-radius: 0.75rem;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button path {
+    fill: #000;
+}

@@ -1,97 +1,78 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { motion } from "framer-motion";
+
+// import './Menu.css';
+
+const menuVariants = {
+    open: { rotate: 180, transition: { duration: 0.2 } },
+    closed: { rotate: 0, transition: { duration: 0.2 } },
+};
+  
+const itemVariants = {
+    open: {
+        opacity: 1,
+        y: 0,
+        transition: { type: "spring", stiffness: 300, damping: 24 },
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+};
+  
+const listVariants = {
+    open: {
+      clipPath: "inset(0% 0% 0% 0% round 10px)",
+      transition: {
+        type: "spring",
+        bounce: 0,
+        duration: 0.7,
+        delayChildren: 0.3,
+        staggerChildren: 0.05
+      }
+    },
+    closed: {
+      clipPath: "inset(10% 50% 90% 50% round 10px)",
+      transition: {
+        type: "spring",
+        bounce: 0,
+        duration: 0.3
+      }
+    }
+};
 
 const Filter = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
-    <div class="inline-flex rounded-md shadow-sm" role="group">
-      <button
-        id="dropdownRadioBgHoverButton"
-        data-dropdown-toggle="dropdownRadioBgHover"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button"
+    <div className="container">
+      <motion.nav
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        className="menu"
       >
-        Dropdown radio{" "}
-        <svg
-          class="w-2.5 h-2.5 ml-2.5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
+        <motion.button
+          whileTap={{ scale: 0.97 }}
+          onClick={() => setIsOpen(!isOpen)}
         >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg>
-      </button>
-
-      {/* <!-- Dropdown menu --> */}
-      <div
-        id="dropdownRadioBgHover"
-        class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
-      >
-        <ul
-          class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
-          aria-labelledby="dropdownRadioBgHoverButton"
+          Color
+          <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
+            <svg width="15" height="15" viewBox="0 0 20 20">
+              <path d="M0 7 L 20 7 L 10 16" />
+            </svg>
+          </motion.div>
+        </motion.button>
+        <motion.ul
+          variants={listVariants}
+          style={{ pointerEvents: isOpen ? "auto" : "none" }}
         >
-          <li>
-            <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-              <input
-                id="default-radio-4"
-                type="radio"
-                value=""
-                name="default-radio"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-              />
-              <label
-                for="default-radio-4"
-                class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
-              >
-                Default radio
-              </label>
-            </div>
-          </li>
-          <li>
-            <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-              <input
-                checked
-                id="default-radio-5"
-                type="radio"
-                value=""
-                name="default-radio"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-              />
-              <label
-                for="default-radio-5"
-                class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
-              >
-                Checked state
-              </label>
-            </div>
-          </li>
-          <li>
-            <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-              <input
-                id="default-radio-6"
-                type="radio"
-                value=""
-                name="default-radio"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-              />
-              <label
-                for="default-radio-6"
-                class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
-              >
-                Default radio
-              </label>
-            </div>
-          </li>
-        </ul>
-      </div>
+          <motion.li variants={itemVariants}>Red </motion.li>
+          <motion.li variants={itemVariants}>Orange </motion.li>
+          <motion.li variants={itemVariants}> Green </motion.li>
+          <motion.li variants={itemVariants}>Black </motion.li>
+          <motion.li variants={itemVariants}> Grey </motion.li>
+        </motion.ul>
+      </motion.nav>
+      <div className="."></div>
     </div>
   );
-}
+};
 
-export default Filter
+export default Filter;
