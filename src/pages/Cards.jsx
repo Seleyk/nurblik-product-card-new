@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const Cards = () => {
   return (
     <div className="p-10">
-      <h1 className="text-center text-3xl font-medium uppercase">Apparel</h1>
+      <h1 className="text-center text-3xl font-medium uppercase mb-8">Apparel</h1>
       <div className="mb-24">
         <Filter />
       </div>
