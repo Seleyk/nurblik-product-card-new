@@ -22,57 +22,30 @@
   .menu {
     width: 120px;
 }
-  
-ul {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    background: #fff;
-    border: 1px solid black;
-    border-radius: 0.75rem;;
+
+/* Filter Style */
+
+.container ul {
+  @apply flex flex-col gap-2 bg-white rounded-xl border-solid border-[1px] border-black
 }
 
-li {
-    color: #000;
-    font-family: 'Roboto', sans-serif;
-    display: block;
-    cursor: pointer;
+.container li {
+  @apply text-black font-montserrat cursor-pointer block
 }
 
 ul {
-  position: absolute;
+  @apply absolute
 }
 
-ul,
+.container ul,
 li {
-    list-style: none;
-    margin: 0;
-    padding: 8px;
+  @apply list-none m-0 p-2 hover:text-gray-500 duration-75 
 }
 
-li:hover {
-    color: rgb(212, 212, 212);
-    transition: 0.9s;
+.container button {
+  @apply bg-white text-black rounded-xl border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between items-center
 }
 
-button {
-    background: #fff;
-    color: #000;
-    border: 1px solid;
-    border-radius: 0.75rem;
-    padding: 10px 20px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-button path {
-    fill: #000;
+.container button path {
+    @apply fill-black
 }
