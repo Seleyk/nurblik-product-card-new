@@ -39,19 +39,21 @@ const listVariants = {
 };
 
 const Filter = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [colorOpen, setColorOpen] = useState(false);
+  const [sizeOpen, setSizeOpen] = useState(false);
+  const [sortOpen, setSortOpen] = useState(false);
   
   return (
     <div className="container">
       <div className="flex flex-col gap-2">
         <motion.nav
           initial={false}
-          animate={isOpen ? "open" : "closed"}
+          animate={colorOpen ? "open" : "closed"}
           className="menu"
         >
           <motion.button
             whileTap={{ scale: 0.97 }}
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setColorOpen(!colorOpen)}
           >
             Color
             <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
@@ -62,7 +64,7 @@ const Filter = () => {
           </motion.button>
           <motion.ul
             variants={listVariants}
-            style={{ pointerEvents: isOpen ? "auto" : "none" }}
+            style={{ pointerEvents: colorOpen ? "auto" : "none" }}
           >
             <motion.li variants={itemVariants}>Red </motion.li>
             <motion.li variants={itemVariants}>Orange </motion.li>
@@ -73,12 +75,12 @@ const Filter = () => {
         </motion.nav>
         <motion.nav
           initial={false}
-          animate={isOpen ? "open" : "closed"}
+          animate={sizeOpen ? "open" : "closed"}
           className="menu"
         >
           <motion.button
             whileTap={{ scale: 0.97 }}
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setSizeOpen(!sizeOpen)}
           >
             Size
             <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
@@ -89,7 +91,7 @@ const Filter = () => {
           </motion.button>
           <motion.ul
             variants={listVariants}
-            style={{ pointerEvents: isOpen ? "auto" : "none" }}
+            style={{ pointerEvents: sizeOpen ? "auto" : "none" }}
           >
             <motion.li variants={itemVariants}>Small </motion.li>
             <motion.li variants={itemVariants}>medium </motion.li>
@@ -101,12 +103,12 @@ const Filter = () => {
       </div>
       <motion.nav
         initial={false}
-        animate={isOpen ? "open" : "closed"}
+        animate={sortOpen ? "open" : "closed"}
         className="menu"
       >
         <motion.button
           whileTap={{ scale: 0.97 }}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setSortOpen(!sortOpen)}
         >
           Sort
           <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
@@ -117,10 +119,10 @@ const Filter = () => {
         </motion.button>
         <motion.ul
           variants={listVariants}
-          style={{ pointerEvents: isOpen ? "auto" : "none" }}
+          style={{ pointerEvents: sortOpen ? "auto" : "none" }}
         >
-          <motion.li variants={itemVariants}>Price: </motion.li>
-          <motion.li variants={itemVariants}>Price: </motion.li>
+          <motion.li variants={itemVariants}>Price: Low to High</motion.li>
+          <motion.li variants={itemVariants}>Price: High to Low</motion.li>
         </motion.ul>
       </motion.nav>
     </div>
