@@ -27,7 +27,8 @@ const Card = ({ item }) => {
         transition={transition}
         className="flex flex-col px-2 max-w-[350px]"
       >
-        <p className="mr-auto font-medium">{item.title}</p> <p>${`${item.price / 100}`}</p>
+        <p className="mr-auto font-medium">{item.title}</p>{" "}
+        <p>${`${item.price / 100}`}</p>
       </motion.span>
     </motion.div>
   );

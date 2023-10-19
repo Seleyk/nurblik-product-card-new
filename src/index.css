@@ -43,7 +43,7 @@ li {
 }
 
 .container button {
-  @apply bg-white text-black rounded-xl border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between items-center
+  @apply bg-white text-black rounded-xl border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center
 }
 
 .container button path {
