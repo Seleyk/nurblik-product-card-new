@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const Cards = () => {
   const [filteredItems, setFilteredItems] = useState([]);
-  const [sort, setSort] = useState(``);
+  const [sort, setSort] = useState(`newest`);
 
   const [colorOpen, setColorOpen] = useState(false);
   const [sizeOpen, setSizeOpen] = useState(false);
@@ -152,7 +152,7 @@ const listVariants = {
               onClick={() => setSortOpen(!sortOpen)}
               className='capitalize'
             >
-              {sort === '' ? 'Sort' : sort}
+              {sort}
               <motion.div   variants={menuVariants} style={{ originY: 0.55 }}>
                 <svg width="15" height="15" viewBox="0 0 20 20">
                   <path d="M0 7 L 20 7 L 10 16" />
