@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import SingleCard from './pages/SingleCard';
 import Details from './pages/Details';
 import Cards from './pages/Cards';
+import Profile from './pages/Profile';
 
 
 
@@ -16,6 +17,7 @@ const App = () => {
                 <Route index path="/" element={<SingleCard />} />
                 <Route path="/details" element={<Details />} /> 
                 <Route path="/cards" element={<Cards />} /> 
+                <Route path="/profile/:id" element={<Profile />} /> 
             </Routes>
         </AnimatePresence>
   );
