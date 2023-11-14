@@ -5,7 +5,7 @@ import SingleCard from './pages/SingleCard';
 import Details from './pages/Details';
 import Cards from './pages/Cards';
 import Profile from './pages/Profile';
-
+import Carousel from './pages/Carousel';
 
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
                 <Route path="/details" element={<Details />} /> 
                 <Route path="/cards" element={<Cards />} /> 
                 <Route path="/profile/:id" element={<Profile />} /> 
+                <Route path="/carousel/" element={<Carousel />} /> 
             </Routes>
         </AnimatePresence>
   );
