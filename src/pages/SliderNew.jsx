@@ -21,18 +21,17 @@ const SliderNew = () => {
     }
   };
 
-  const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
+  const transition = { duration: .8, ease: [0.43, 0.23, 0.23, .98] };
 
   return (
-    <div className="h-[900px] relative flex flex-col items-center place-content-center justify-center p-0 gap-0 overflow-hidden">
-      {/* <div className="flex flex-col items-center justify-between min-h-screen p-24"> */}
-      <div className="relative w-full items-center h-[700px]">
-        <div className="absolute top-[calc(50%_-_400px)] left-[calc(50%_-_400px)] h-[600px] w-[800px]">
+    <div className="h-[130vh] relative flex flex-col items-center place-content-center justify-center p-24 gap-0 overflow-hidden">
+      <div className="relative w-full items-center h-[700px] max-w-[1500px]">
+        <div className="absolute top-[calc(50%_-_300px)] left-[calc(50%_-_400px)] h-[600px] w-[800px]">
           <motion.div
             className=" flex gap-4"
             animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)` }}
             transition={transition}
-          >
+          > 
             {items.map((item, idx) => (
               <motion.img
                 key={idx}
@@ -47,13 +46,23 @@ const SliderNew = () => {
               />
             ))}
           </motion.div>
-          <div className="absolute left-2 right-2 flex justify-between z-10">
-            <button onClick={prevClick}>
+          <div className="absolute inset-0 flex justify-between z-10 items-center">
+            <button className="h-12" onClick={prevClick}>
               <img src="/assets/leftArrow.svg" height={48} width={56} alt="" />
             </button>
-            <button onClick={nextClick}>
+            <button className="h-12" onClick={nextClick}>
               <img src="/assets/rightArrow.svg" height={48} width={56} alt="" />
             </button>
+          </div>
+        </div>
+        <div className="flex items-center flex-row absolute left-5 z-30 top-0 w-min h-min gap-3 mix-blend-exclusion">
+          <div className="flex flex-col justify-start relative z-10">
+            <div className="text-black text-[80px] font-normal font-Roboto tracking-[8px] uppercase">new</div>
+          </div>
+        </div>
+        <div className="flex items-center flex-row absolute right-5 z-30 bottom-0 w-min h-min gap-3">
+          <div className="flex flex-col justify-start relative z-10">
+            <div className="text-black text-[80px] font-normal font-Roboto tracking-[8px] uppercase">arrivals</div>
           </div>
         </div>
       </div>

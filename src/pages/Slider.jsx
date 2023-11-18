@@ -32,6 +32,7 @@ const Slider = () => {
         </div>
         <motion.div className="flex gap-4 flex-nowrap"
           animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)` }}
+          transition={transition}
         >
           {items.map((item, idx) => (
             <img
