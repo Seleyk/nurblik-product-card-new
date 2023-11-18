@@ -29,7 +29,7 @@ const SliderNew = () => {
       <div className="relative w-full items-center h-[700px]">
         <div className="absolute top-[calc(50%_-_400px)] left-[calc(50%_-_400px)] h-[600px] w-[800px]">
           <motion.div
-            className=" flex gap-2"
+            className=" flex gap-4"
             animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)` }}
             transition={transition}
           >

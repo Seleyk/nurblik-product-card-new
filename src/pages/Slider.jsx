@@ -19,35 +19,29 @@ const Slider = () => {
     handleClick(currentIndex === 0 ? items.length - 1 : currentIndex - 1);
   };
 
-  const imageVariants = {};
   return (
-    // <div className=" flex-col p-0 justify-center bg-black h-[900px] flex items-center overflow-hidden place-items-center w-full relative">
-    <div className=" h-[900px] w-full flex flex-col place-content-center items-center gap-0 p-0 relative overflow-hidden ">
-      <div className=" flex-[0_0_auto] h-[700px] width-full overflow-hidden  ">
-        <div className=" opacity-100 h-[600px] w-[800px] absolute top-[calc(50%-300px)] left-[calc(50%-400px)]">
-          <section>
-            <div className="w-full h-full absolute inset-0 overflow-visible">
-              <div className="flex flex-row w-full h-full max-w-full max-h-full place-items-center m-0 p-0 opacity-100">
-                <div className="flex flex-row gap-3 ">
-                  {items.map((image, index) => (
-                    <motion.img
-                      key={index}
-                      src={image.img}
-                      alt={image.title}
-                      className=" object-cover w-full "
-                      initial="center"
-                      // animate={positions[positionIndexes[index]]}
-                      // variants={imageVariants}
-                      // transition={transition}
-                      // style={{ width: "40%", position: "absolute" }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className=""></div>
-          </section>
+    <div className="flex flex-col items-center justify-between min-h-screen p-24">
+      <div className="relative w-full flex items-center max-w-[1500px]">
+        <div className="absolute left-2 flex right-2 justify-between z-20">
+          <button onClick={handleBack}>
+            <img src="/assets/leftArrow.svg" height={48} width={56} alt="" />
+          </button>
+          <button onClick={handleNext}>
+            <img src="/assets/rightArrow.svg" height={48} width={56} alt="" />
+          </button>
         </div>
+        <motion.div className="flex gap-4 flex-nowrap"
+          animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)` }}
+        >
+          {items.map((item, idx) => (
+            <img
+              key={idx}
+              src={item.img}
+              alt={item.img}
+              className="objecct-cover aspect-[16/9]"
+            />
+          ))}
+        </motion.div>
       </div>
     </div>
   );
