@@ -57,12 +57,12 @@ const SliderNew = () => {
         </div>
         <div className="flex items-center flex-row absolute left-5 z-30 top-0 w-min h-min gap-3 mix-blend-exclusion">
           <div className="flex flex-col justify-start relative z-10">
-            <div className="text-black text-[80px] font-bold font-Roboto tracking-[8px] uppercase">new</div>
+            <div className="text-black text-[80px] font-normal font-Roboto tracking-[8px] uppercase">new</div>
           </div>
         </div>
-        <div className="flex items-center flex-row absolute right-5 z-30 bottom-0 w-min h-min gap-3 mix-blend-exclusion">
+        <div className="flex items-center flex-row absolute right-5 z-30 bottom-0 w-min h-min gap-3 mix-blend-multiply">
           <div className="flex flex-col justify-start relative z-10">
-            <div className="text-black text-[80px] font-bold font-Roboto tracking-[8px] uppercase">arrivals</div>
+            <div className="text-black text-[80px] font-normal font-Roboto tracking-[8px] uppercase">arrivals</div>
           </div>
         </div>
       </div>
