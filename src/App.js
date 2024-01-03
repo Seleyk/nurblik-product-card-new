@@ -6,8 +6,9 @@ import Details from './pages/Details';
 import Cards from './pages/Cards';
 import Profile from './pages/Profile';
 import Carousel from './pages/Carousel';
-import Slider from './pages/Slider';
 import SliderNew from './pages/SliderNew';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 
 const App = () => {
@@ -16,13 +17,14 @@ const App = () => {
   return (
         <AnimatePresence initial={false} mode='wait'>
             <Routes location={location} key={location.pathname} >
-                <Route index path="/" element={<SingleCard />} />
+                <Route index path="/singlecard" element={<SingleCard />} />
+                <Route path="/login" element={<Login />} /> 
+                <Route path="/register" element={<Register />} /> 
                 <Route path="/details" element={<Details />} /> 
                 <Route path="/cards" element={<Cards />} /> 
                 <Route path="/profile/:id" element={<Profile />} /> 
                 <Route path="/carousel/" element={<Carousel />} />
-                <Route path="/slider/" element={<Slider />} />
-                <Route path="/slider-new/" element={<SliderNew/>} />
+                <Route path="/slider/" element={<SliderNew/>} />
             </Routes>
         </AnimatePresence>
   );
