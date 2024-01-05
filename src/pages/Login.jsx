@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div className="w-full h-[100vh]">
       <video className="w-full h-full object-cover absolute -z-10" src="/assets/loginvid.mp4" autoPlay muted loop />
-      <div className="  px-32 flex items-center justify-end ">
+      <div className="h-full px-32 flex items-center justify-end ">
         <div className="bg-[#F8F7F4] bg-opacity-95 flex flex-col gap-6 w-[480px] p-8 rounded-3xl ">
           <div className="flex flex-col items-center gap-1 inline-flex">
             <h1 className="text-black text-[32px] font-semibold tracking-wider">
