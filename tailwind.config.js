@@ -18,6 +18,11 @@ module.exports = {
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
       },
+      colors: {
+        'primary-gray-500': '#5B6175',
+        'primary-gray-400': '#A1A4B0',
+      },
+
     },
   },
   plugins: [],
