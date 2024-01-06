@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('submit');
+  };
+
+
   return (
     <div className="w-full h-[100vh]">
-      <video className="w-full h-full object-cover absolute -z-10" src="/assets/loginvid.mp4" autoPlay muted loop />
+      <video
+        className="w-full h-full object-cover absolute -z-10"
+        src="/assets/loginvid.mp4"
+        autoPlay
+        muted
+        loop
+      />
       <div className="h-full px-32 flex items-center justify-end ">
         <div className="bg-[#F8F7F4] bg-opacity-95 flex flex-col gap-6 w-[480px] p-8 rounded-3xl ">
           <div className="flex flex-col items-center gap-1 inline-flex">
@@ -20,15 +36,29 @@ const Login = () => {
               </span>
             </div>
           </div>
-          <div>
+          <div >
             <div className="mb-4">
-              <div class="flex flex-col gap-2 mb-1">
+              <div onSubmit={handleSubmit} className="flex flex-col gap-2 mb-1">
                 <TextField
+                  required
+                  name="email"
+                  id="email"
                   label="Email Address"
                   size="small"
                   variant="outlined"
+                  autoFocus
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <TextField label="password" size="small" variant="outlined" />
+                <TextField
+                  required
+                  name="password"
+                  id="password"
+                  label="password"
+                  type="password"
+                  size="small"
+                  variant="outlined"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
               <a
                 href="#"
@@ -37,13 +67,12 @@ const Login = () => {
                 Forgot your password
               </a>
             </div>
-            <a className="cta">
-              <span className="cta-txt">Sign In</span>
-            </a>
-            <p className="flex items-center justify-center my-6">
-              <span>
-                <hr className="h-[5px] bg-black" />
+            <button  className="cta" type='submit'>
+              <span className="cta-txt">
+                Sign In
               </span>
+            </button>
+            <p className="flex items-center justify-center my-6">
               or
             </p>
             <div className="flex flex-col gap-3">
