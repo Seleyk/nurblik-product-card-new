@@ -10,7 +10,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit");
+    console.log();
   };
 
   return (
@@ -39,7 +39,7 @@ const Register = () => {
           </div>
           <div>
             <div className="mb-4">
-              <div onSubmit={handleSubmit} className="flex flex-col gap-2 mb-1">
+              <form compontent='form' onSubmit={handleSubmit} className="flex flex-col gap-2 mb-1">
                 <div className="flex flex-row gap-2 mb-1">
                   <TextField
                     required
@@ -89,12 +89,14 @@ const Register = () => {
                   type="password"
                   size="small"
                   variant="outlined"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-              </div>
+              </form>
             </div>
-            <button className="cta" type="submit">
-              <span className="cta-txt">Sign up</span>
+            <button className="cta" type="submit" onClick={handleSubmit}>
+              <span className="cta-txt">
+                Sign up
+              </span>
             </button>
             <p className="flex items-center justify-center my-6">or</p>
             <div className="flex flex-col gap-3">
