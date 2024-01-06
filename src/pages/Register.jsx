@@ -10,7 +10,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log();
+    console.log('submit');
   };
 
   return (
