@@ -5,7 +5,11 @@ const FirstSlide = () => {
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
-    <motion.div className="h-full relative bg-neutral-200 overflow-hidden">
+    <motion.div
+      exit={{ x: 100 }}
+      
+      className="h-full relative bg-neutral-200 overflow-hidden"
+    >
       <img
         className="absolute bottom-0 right-[397px]"
         src="/assets/photo-1532332248682-206cc786359f (1).png"

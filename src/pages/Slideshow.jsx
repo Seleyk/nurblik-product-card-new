@@ -43,7 +43,9 @@ const Slideshow = () => {
         Prev
       </button>
       <motion.div
-        key={currentIndex}
+        key={sliderItems}
+        initial={{ x: 100 }}
+        animate={{ x: 0 }}
         // initial={{ x: nextSlide ? 100 : -100 }}
         // animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)` }}
         // exit={{ x: nextSlide ? -100 : 100 }}
