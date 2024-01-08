@@ -68,3 +68,69 @@ li {
 .input-txt {
   @apply text-black text-sm font-semibold
 }
+
+/* DETAILS STYLES  */
+.main {
+  @apply flex flex-col items-center
+}
+
+.slider-container {
+  @apply flex flex-col items-center my-6
+}
+
+.slider {
+  @apply relative w-[531px] h-[615px] overflow-hidden max-sm:h-[400px] max-sm:w-[300px]
+}
+
+.image {
+  @apply absolute h-full w-full bg-cover bg-no-repeat bg-center hover:cursor-grab active:cursor-grabbing
+}
+
+.image {
+  will-change: transform, opacity;
+}
+
+.buttons {
+  @apply mt-3
+}
+
+.buttons button {
+  @apply outline-none border-none select-none py-10 px-3 transition-all
+}
+
+.buttons button {
+  transition: .07s ease-out transform;
+}
+
+.thumbnails {
+  @apply flex justify-center
+}
+
+.thumbnails .thumbnail-container {
+  @apply relative h-32 w-24 max-sm:h-20 max-sm:w-14 hover:cursor-pointer mr-1
+}
+
+.thumbnails .thumbnail-container img {
+  @apply h-full w-full object-cover object-center
+}
+
+.thumbnails .thumbnail-container .active-indicator {
+  @apply absolute top-0 left-0 h-full w-full pointer-events-none bg-slate-400
+}
+
+.thumbnails .thumbnail-container .active-indicator {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 1s cubic-bezier(0.56, 0.03, 0.12, 1.04) transform;
+}
+
+.thumbnails .thumbnail-container .active-indicator .active {
+  transform: scaleX(1);
+}
+/* .thumbnails .thumbnail-container .active-indicator &.active {
+  transform: scaleX(1);
+} */
+
+
+
+

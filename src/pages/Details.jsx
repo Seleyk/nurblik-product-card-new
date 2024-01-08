@@ -1,53 +1,102 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { wrap } from "@popmotion/popcorn";
 import { items } from '../data';
 
-const Details = () => {
-  const transition = { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] };
+const sliderVariants = {
+  incoming: (direction) => ({
+    x: direction > 0 ? "100%" : "-100%",
+    scale: 1,
+    opacity: 0,
+  }),
+  active: { x: 0, scale: 1, opacity: 1 },
+  exit: (direction) => ({
+    x: direction > 0 ? "-100%" : "100%",
+    scale: 1,
+    opacity: 0.2,
+  }),
+};
+
+const sliderTransition = { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] };
+
+const App = () => {
+  const [[imageCount, direction], setImageCount] = useState([0, 0]);
+
+  const activeImageIndex = wrap(0, items.length, imageCount);
+
+  const swipeToImage = (swipeDirection) => {
+    setImageCount([imageCount + swipeDirection, swipeDirection]);
+  };
+
+  const dragEndHandler = (dragInfo) => {
+    const draggedDistance = dragInfo.offset.x;
+    const swipeThreshold = 50;
+    if (draggedDistance > swipeThreshold) {
+      swipeToImage(-1);
+    } else if (draggedDistance < -swipeThreshold) {
+      swipeToImage(1);
+    }
+  };
+
+  const skipToImage = (imageId) => {
+    let changeDirection;
+    if (imageId > activeImageIndex) {
+      changeDirection = 1;
+    } else if (imageId < activeImageIndex) {
+      changeDirection = -1;
+    }
+    setImageCount([imageId, changeDirection]);
+  };
 
   return (
-    <div className="grid grid-cols-[40rem_auto] h-[100vh]">
-      <motion.div className="h-[100vh] flex items-center justify-center">
-        <motion.div
-          initial={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "350px",
-            height: "380px",
-            borderRadius: '.75rem',
-            scale: 1.2
-          }}
-          animate={{
-            height: "100vh",
-            width: "100%",
-            borderRadius: 0,
-            scale: 1
-          }}
-          className=" overflow-hidden"
-          transition={transition}
-        >
-          <motion.img
-            className="w-full h-full object-cover"
-            src={items[1].img}
-            alt=" T-shirt"
-          />
-        </motion.div>
-      </motion.div>
-      <div>
-        <motion.div
-          whileInView={{ y: [-100, 0], opacity: [0, 1],  }}
-          transition={{delay: 0.5, staggerChildren: 1, ...transition}}
-          className="text-center p-8 flex flex-col gap-4"
-        >
-          <motion.div className="text-6xl font-montserrat font-semibold uppercase">
-            T-Shirt
-          </motion.div>
-          <motion.div className="text-xl font-medium uppercase">$49.95</motion.div>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
+    <main>
+      <div className="slider-container">
+        <div className="slider">
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={imageCount}
+              style={{
+                backgroundImage: `url(${items[activeImageIndex].img})`,
+              }}
+              custom={direction}
+              variants={sliderVariants}
+              initial="incoming"
+              animate="active"
+              exit="exit"
+              transition={sliderTransition}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={1}
+              onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
+              className="image"
+            />
+          </AnimatePresence>
+        </div>
 
-export default Details
+        <div className="buttons">
+          <button onClick={() => swipeToImage(-1)}>PREV</button>
+          <button onClick={() => swipeToImage(1)}>NEXT</button>
+        </div>
+      </div>
+
+      <div className="thumbnails">
+        {items.map((image, idx) => (
+          <div
+            key={image.id}
+            onClick={() => skipToImage(idx)}
+            className="thumbnail-container"
+          >
+            <img src={image.img} alt="Musician" />
+            <div
+              className={`active-indicator ${
+                image.id === activeImageIndex ? "active" : null
+              }`}
+            />
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+};
+
+export default App;

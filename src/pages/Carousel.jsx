@@ -16,7 +16,7 @@ const Carousel = () => {
   return (
     // TO DO: ADD PAGINATION
 
-    <div className="mt-40 ">
+    <div className="pt-20 bg-[#FCF8F2]">
       <div className="text-black text-[32px] font-semibold mb-4 ml-40 tracking-[3.20px]">
         FEATURED ITEMS
       </div>
@@ -62,7 +62,7 @@ const Carousel = () => {
           ))}
         </motion.div>
       </motion.div>
-      <div className="width-full flex justify-end mr-10 mb-16">
+      <div className="width-full flex justify-end mr-10 pb-16">
         <button className="h-9 justify-center items-center inline-flex">
           <div className="px-4 py-2 rounded justify-start items-center gap-1.5 flex">
             <div className="justify-center items-center gap-2.5 flex">

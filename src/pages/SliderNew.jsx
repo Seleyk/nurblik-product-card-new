@@ -24,7 +24,7 @@ const SliderNew = () => {
   const transition = { duration: .8, ease: [0.43, 0.23, 0.23, .98] };
 
   return (
-    <div className="h-[130vh] relative flex flex-col items-center place-content-center justify-center p-24 gap-0 overflow-hidden">
+    <div className="bg-[#FCF8F2] h-[130vh] relative flex flex-col items-center place-content-center justify-center p-24 gap-0 overflow-hidden">
       <div className="relative w-full items-center h-[700px] max-w-[1500px]">
         <div className="absolute top-[calc(50%_-_300px)] left-[calc(50%_-_400px)] h-[600px] w-[800px]">
           <motion.div
