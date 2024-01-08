@@ -110,27 +110,23 @@ li {
   @apply relative h-32 w-24 max-sm:h-20 max-sm:w-14 hover:cursor-pointer mr-1
 }
 
-.thumbnails .thumbnail-container img {
+.thumbnail-container > img {
   @apply h-full w-full object-cover object-center
 }
 
-.thumbnails .thumbnail-container .active-indicator {
-  @apply absolute top-0 left-0 h-full w-full pointer-events-none bg-slate-400
+.active-indicator {
+  @apply absolute top-0 left-0 h-full w-full pointer-events-none bg-[#5B6175] opacity-95 z-10
 }
 
-.thumbnails .thumbnail-container .active-indicator {
+.active-indicator {
   transform: scaleX(0);
   transform-origin: left;
   transition: 1s cubic-bezier(0.56, 0.03, 0.12, 1.04) transform;
 }
 
-.thumbnails .thumbnail-container .active-indicator .active {
+.active {
   transform: scaleX(1);
 }
 /* .thumbnails .thumbnail-container .active-indicator &.active {
   transform: scaleX(1);
 } */
-
-
-
-

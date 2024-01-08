@@ -89,7 +89,7 @@ const App = () => {
             <img src={image.img} alt="Musician" />
             <div
               className={`active-indicator ${
-                image.id === activeImageIndex ? "active" : null
+                idx === activeImageIndex ? "active" : null
               }`}
             />
           </div>
