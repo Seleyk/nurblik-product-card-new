@@ -31,7 +31,7 @@
 }
 
 .container li {
-  @apply text-black font-montserrat cursor-pointer block
+  @apply text-black cursor-pointer block
 }
 
 ul {
@@ -43,7 +43,7 @@ li {
   @apply list-none m-0 p-2 hover:text-gray-500 duration-75 
 }
 
-.container button {
+.container button  {
   @apply bg-white text-black rounded-xl border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center
 }
 
@@ -71,7 +71,7 @@ li {
 
 /* DETAILS STYLES  */
 .details-container {
-  @apply mt-20 mx-16 flex gap-20
+  @apply pt-20 px-16 flex gap-20
 }
 
 .slider-container-parent {
@@ -95,7 +95,7 @@ li {
 }
 
 .buttons {
-  @apply absolute bottom-4 flex justify-between w-full
+  @apply absolute bottom-1 flex justify-between w-full
 }
 
 .buttons button {
@@ -131,3 +131,34 @@ li {
 .active {
   transform: scaleX(1);
 }
+/*  */
+
+.item-select-container > .menu {
+  @apply w-full
+}
+
+.item-select-container ul {
+  @apply flex flex-col gap-2 rounded-lg border-solid border-[1px] border-black w-[338px]
+}
+
+.item-select-container li {
+  @apply text-black cursor-pointer block hover:bg-slate-300 w-full transition-all ease-in
+}
+
+ul {
+  @apply absolute
+}
+
+.item-select-container ul,
+li {
+  @apply list-none m-0 hover:text-gray-500 duration-75 
+}
+
+.item-select-container button  {
+  @apply text-black rounded-md border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center
+}
+
+.item-select-container button path {
+    @apply fill-black
+}
+
