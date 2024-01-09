@@ -70,16 +70,20 @@ li {
 }
 
 /* DETAILS STYLES  */
-.main {
-  @apply flex flex-col items-center
+.details-container {
+  @apply mt-20 mx-16 flex gap-20
+}
+
+.slider-container-parent {
+  @apply flex flex-row items-start gap-4
 }
 
 .slider-container {
-  @apply flex flex-col items-center my-6
+  @apply relative w-[507px] h-[589px] flex flex-col items-center
 }
 
 .slider {
-  @apply relative w-[531px] h-[615px] overflow-hidden max-sm:h-[400px] max-sm:w-[300px]
+  @apply relative w-full h-full overflow-hidden max-sm:h-[400px] max-sm:w-[300px]
 }
 
 .image {
@@ -91,11 +95,11 @@ li {
 }
 
 .buttons {
-  @apply mt-3
+  @apply absolute bottom-4 flex justify-between w-full
 }
 
 .buttons button {
-  @apply outline-none border-none select-none py-10 px-3 transition-all
+  @apply outline-none border-none select-none py-1 px-3 transition-all
 }
 
 .buttons button {
@@ -103,11 +107,11 @@ li {
 }
 
 .thumbnails {
-  @apply flex justify-center
+  @apply flex justify-start flex-col gap-3
 }
 
 .thumbnails .thumbnail-container {
-  @apply relative h-32 w-24 max-sm:h-20 max-sm:w-14 hover:cursor-pointer mr-1
+  @apply relative h-32 w-24 max-sm:h-20 max-sm:w-14 hover:cursor-pointer
 }
 
 .thumbnail-container > img {
@@ -127,6 +131,3 @@ li {
 .active {
   transform: scaleX(1);
 }
-/* .thumbnails .thumbnail-container .active-indicator &.active {
-  transform: scaleX(1);
-} */

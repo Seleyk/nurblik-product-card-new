@@ -95,6 +95,7 @@ const listVariants = {
               <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setColorOpen(!colorOpen)}
+                
               >
                 Color
                 <motion.div variants={menuVariants} style={{ originY: 0.55 }}>

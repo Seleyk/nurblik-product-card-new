@@ -42,7 +42,7 @@ const Slider = () => {
               key={idx}
               src={item.img}
               alt={item.img}
-              className="objecct-cover aspect-[16/9]"
+              className="h-full w-full bg-cover bg-no-repeat bg-center"
             />
           ))}
         </motion.div>

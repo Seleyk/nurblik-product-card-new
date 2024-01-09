@@ -17,12 +17,12 @@ export const items = [
         title: 'YOHJI YAMAMOTO CARGO PANTS',
         price: 1499
     },
-    // {
-    //     id: 4,
-    //     img: 'https://i.pinimg.com/564x/60/fe/6e/60fe6e7adc09d72bbf8290160f2b2b5b.jpg',
-    //     title: 'Palace Flame zip hood',
-    //     price: 2695
-    // },
+    {
+        id: 4,
+        img: 'https://i.pinimg.com/564x/60/fe/6e/60fe6e7adc09d72bbf8290160f2b2b5b.jpg',
+        title: 'Palace Flame zip hood',
+        price: 2695
+    },
     // {
     //     id: 5,
     //     img: 'https://i.pinimg.com/736x/89/07/a4/8907a4779b168cad870bbfd520c63531.jpg',
