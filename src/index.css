@@ -44,7 +44,7 @@ li {
 }
 
 .container button  {
-  @apply bg-white text-black rounded-xl border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center
+  @apply text-black rounded-md border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center
 }
 
 .container button path {
@@ -54,6 +54,42 @@ li {
 /* button style */
 .cta {
  @apply w-full bg-primary-gray-500 hover:bg-primary-gray-400 h-9 px-[17px] py-0.5 rounded border border-black justify-center items-center gap-2.5 inline-flex cursor-pointer ease-in 
+}
+
+.cta-real {
+  @apply relative bg-primary-gray-500 opacity-80 border-none cursor-pointer 
+}
+
+.cta-real span {
+  @apply block py-1 
+}
+
+.cta-real::before, .cta-real::after {
+  @apply content-[""]	w-0 h-1 absolute transition-all bg-black hover:w-full hover:h-full
+}
+
+.cta-real::before {
+  @apply top-0 right-0
+}
+
+.cta-real::after {
+  @apply left-0 bottom-0
+}
+
+.cta-real span::before {
+  @apply left-0 top-0
+}
+
+.cta-real span::after {
+  @apply right-0 bottom-0
+}
+
+.cta-real:hover::before, .btn-1:hover::after{
+  @apply delay-0
+}
+
+.btn-1:hover span::before, .btn-1:hover span::after{
+  @apply delay-200
 }
 
 .cta-txt {
@@ -162,3 +198,83 @@ li {
     @apply fill-black
 }
 
+/* button */
+
+.btn-1{
+/*   display: inline-block; */
+  position: relative;
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+/*   margin: 20px 30px; */
+  background: #A1A4B0;
+  width: 100%;
+  /* border-radius: 10px; */
+}
+.btn-1 span{
+  display: block;
+  padding: 25px 80px;
+}
+.btn-1::before, .btn-1::after{
+  content:"";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #000;
+}
+
+.btn-1 span::before, .btn-1 span::after{
+  content:"";
+  width:2px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #000;
+}
+
+.btn-1:hover::before, .btn-1:hover::after{
+  width: 100%;
+}
+.btn-1:hover span::before, .btn-1:hover span::after{
+  height: 100%;
+}
+/*----- button 1 -----*/
+.btn-1::before, .btn-1::after{
+/*   transition-delay: 0.2s; */
+}
+.btn-1 span::before, .btn-1 span::after{
+/*   transition-delay: 0s; */
+}
+.btn-1::before{
+  right: 0;
+  top: 0;
+}
+.btn-1::after{
+  left: 0;
+  bottom: 0;
+}
+.btn-1 span::before{
+  left: 0;
+  top: 0;
+}
+.btn-1 span::after{
+  right: 0;
+  bottom: 0;
+}
+.btn-1:hover::before, .btn-1:hover::after{
+  transition-delay: 0s;
+}
+.btn-1:hover span::before, .btn-1:hover span::after{
+  transition-delay: 0.2s;
+}
+
+.btn-1:hover {
+  @apply bg-primary-gray-500 delay-500 transition-all ease-in shadow-2xl
+}
+
+.btn-1 span {
+  @apply active:bg-primary-gray-400
+}

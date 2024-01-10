@@ -149,112 +149,119 @@ const App = () => {
               mauris a diam maecenas sed enim.
             </div>
           </div>
-          <div className="item-select-container flex w-full gap-4">
-            <motion.nav
-              initial={false}
-              animate={colorOpen ? "open" : "closed"}
-              className="menu"
-            >
-              <motion.button
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setColorOpen(!colorOpen)}
+          <div className="">
+            <div className="item-select-container flex w-full gap-4">
+              <motion.nav
+                initial={false}
+                animate={colorOpen ? "open" : "closed"}
+                className="menu"
               >
-                {color}
-                <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
-                  <svg width="15" height="15" viewBox="0 0 20 20">
-                    <path d="M0 7 L 20 7 L 10 16" />
-                  </svg>
-                </motion.div>
-              </motion.button>
-              <motion.ul
-                variants={listVariants}
-                style={{ pointerEvents: colorOpen ? "auto" : "none" }}
+                <motion.button
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setColorOpen(!colorOpen)}
+                >
+                  {color}
+                  <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
+                    <svg width="15" height="15" viewBox="0 0 20 20">
+                      <path d="M0 7 L 20 7 L 10 16" />
+                    </svg>
+                  </motion.div>
+                </motion.button>
+                <motion.ul
+                  variants={listVariants}
+                  style={{ pointerEvents: colorOpen ? "auto" : "none" }}
+                >
+                  <motion.li
+                    onClick={() => setColor("Red")}
+                    variants={itemVariants}
+                  >
+                    Red
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setColor("Orange")}
+                    variants={itemVariants}
+                  >
+                    Orange
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setColor("Green")}
+                    variants={itemVariants}
+                  >
+                    Green
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setColor("Black")}
+                    variants={itemVariants}
+                  >
+                    Black
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setColor("Grey")}
+                    variants={itemVariants}
+                  >
+                    Grey
+                  </motion.li>
+                </motion.ul>
+              </motion.nav>
+              <motion.nav
+                initial={false}
+                animate={sizeOpen ? "open" : "closed"}
+                className="menu"
               >
-                <motion.li
-                  onClick={() => setColor("Red")}
-                  variants={itemVariants}
+                <motion.button
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setSizeOpen(!sizeOpen)}
+                  className=".container-button"
                 >
-                  Red
-                </motion.li>
-                <motion.li
-                  onClick={() => setColor("Orange")}
-                  variants={itemVariants}
+                  {size}
+                  <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
+                    <svg width="15" height="15" viewBox="0 0 20 20">
+                      <path d="M0 7 L 20 7 L 10 16" />
+                    </svg>
+                  </motion.div>
+                </motion.button>
+                <motion.ul
+                  variants={listVariants}
+                  style={{ pointerEvents: sizeOpen ? "auto" : "none" }}
                 >
-                  Orange
-                </motion.li>
-                <motion.li
-                  onClick={() => setColor("Green")}
-                  variants={itemVariants}
-                >
-                  Green
-                </motion.li>
-                <motion.li
-                  onClick={() => setColor("Black")}
-                  variants={itemVariants}
-                >
-                  Black
-                </motion.li>
-                <motion.li
-                  onClick={() => setColor("Grey")}
-                  variants={itemVariants}
-                >
-                  Grey
-                </motion.li>
-              </motion.ul>
-            </motion.nav>
-            <motion.nav
-              initial={false}
-              animate={sizeOpen ? "open" : "closed"}
-              className="menu"
-            >
-              <motion.button
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setSizeOpen(!sizeOpen)}
-                className=".container-button"
-              >
-                {size}
-                <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
-                  <svg width="15" height="15" viewBox="0 0 20 20">
-                    <path d="M0 7 L 20 7 L 10 16" />
-                  </svg>
-                </motion.div>
-              </motion.button>
-              <motion.ul
-                variants={listVariants}
-                style={{ pointerEvents: sizeOpen ? "auto" : "none" }}
-              >
-                <motion.li
-                  onClick={() => setSize("Small")}
-                  variants={itemVariants}
-                >
-                  Small
-                </motion.li>
-                <motion.li
-                  onClick={() => setSize("Medium")}
-                  variants={itemVariants}
-                >
-                  medium
-                </motion.li>
-                <motion.li
-                  onClick={() => setSize("Large")}
-                  variants={itemVariants}
-                >
-                  large
-                </motion.li>
-                <motion.li
-                  onClick={() => setSize("XL")}
-                  variants={itemVariants}
-                >
-                  X-Large
-                </motion.li>
-                <motion.li
-                  onClick={() => setSize("XXL")}
-                  variants={itemVariants}
-                >
-                  2X-Large
-                </motion.li>
-              </motion.ul>
-            </motion.nav>
+                  <motion.li
+                    onClick={() => setSize("Small")}
+                    variants={itemVariants}
+                  >
+                    Small
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setSize("Medium")}
+                    variants={itemVariants}
+                  >
+                    medium
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setSize("Large")}
+                    variants={itemVariants}
+                  >
+                    large
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setSize("XL")}
+                    variants={itemVariants}
+                  >
+                    X-Large
+                  </motion.li>
+                  <motion.li
+                    onClick={() => setSize("XXL")}
+                    variants={itemVariants}
+                  >
+                    2X-Large
+                  </motion.li>
+                </motion.ul>
+              </motion.nav>
+            </div>
+            <div class="">
+              <button class="btn-1">
+                <span>Hover Me</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
