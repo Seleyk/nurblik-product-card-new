@@ -2,7 +2,6 @@ import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import SingleCard from './pages/SingleCard';
-import Details from './pages/DetailOg'
 import Cards from './pages/Cards';
 import Profile from './pages/Profile';
 import Carousel from './pages/Carousel';
@@ -11,6 +10,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Slideshow from './pages/Slideshow';
+import CardDetails from './pages/Details';
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
                 <Route path="/singlecard" element={<SingleCard />} />
                 <Route path="/login" element={<Login />} /> 
                 <Route path="/register" element={<Register />} /> 
-                <Route path="/details" element={<Details />} /> 
+                <Route path="/details" element={<CardDetails />} /> 
                 <Route path="/cards" element={<Cards />} /> 
                 <Route path="/profile/:id" element={<Profile />} /> 
                 <Route path="/carousel/" element={<Carousel />} />

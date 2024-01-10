@@ -25,7 +25,7 @@ const Details = () => {
             borderRadius: 0,
             scale: 1
           }}
-          className=" overflow-hidden"
+          className="overflow-hidden"
           transition={transition}
         >
           <motion.img
