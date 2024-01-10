@@ -1,26 +1,7 @@
 import React, { useState } from "react"
 import { items } from '../data';
 import { motion } from "framer-motion"
-import { wrap } from "@popmotion/popcorn"
 
-const sliderVariants = {
-  incoming: direction => ({
-    x: direction > 0 ? "100%" : "-100%",
-    scale: 1.2,
-    opacity: 0
-  }),
-  active: { x: 0, scale: 1, opacity: 1 },
-  exit: direction => ({
-    x: direction > 0 ? "-100%" : "100%",
-    scale: 1,
-    opacity: 0.2
-  })
-}
-
-const sliderTransition = {
-  duration: 1,
-  ease: [0.56, 0.03, 0.12, 1.04]
-}
 
 const Details = () => {
   const transition = { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] };
