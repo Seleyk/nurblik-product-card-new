@@ -21,17 +21,19 @@ const SliderNew = () => {
     }
   };
 
-  const transition = { duration: .8, ease: [0.43, 0.23, 0.23, .98] };
+  const transition = { duration: 0.8, ease: [0.43, 0.23, 0.23, 0.98] };
 
   return (
-    <div className="bg-[#FCF8F2] h-[130vh] relative flex flex-col items-center place-content-center justify-center p-24 gap-0 overflow-hidden">
+    <div className="bg-[#F8F7F4] h-[130vh] relative flex flex-col items-center place-content-center justify-center p-24 gap-0 overflow-hidden">
       <div className="relative w-full items-center h-[700px] max-w-[1500px]">
         <div className="absolute top-[calc(50%_-_300px)] left-[calc(50%_-_400px)] h-[600px] w-[800px]">
           <motion.div
             className=" flex gap-4"
-            animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)` }}
+            animate={{
+              x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)`,
+            }}
             transition={transition}
-          > 
+          >
             {items.map((item, idx) => (
               <motion.img
                 key={idx}
@@ -55,16 +57,28 @@ const SliderNew = () => {
             </button>
           </div>
         </div>
-        <div className="flex items-center flex-row absolute left-5 z-30 top-0 w-min h-min gap-3 mix-blend-exclusion">
+        <motion.div
+          whileInView={{ x: [-50, 0], opacity: [0, 1] }}
+          transition={transition}
+          className="flex items-center flex-row absolute left-5 z-30 top-0 w-min h-min gap-3 mix-blend-multiply"
+        >
           <div className="flex flex-col justify-start relative z-10">
-            <div className="text-black text-[80px] font-normal font-Roboto tracking-[8px] uppercase">new</div>
+            <div className="text-black text-[72px] font-semibold tracking-[8px] uppercase">
+              new
+            </div>
           </div>
-        </div>
-        <div className="flex items-center flex-row absolute right-5 z-30 bottom-0 w-min h-min gap-3 mix-blend-multiply">
+        </motion.div>
+        <motion.div
+          whileInView={{ x: [50, 0], opacity: [0, 1] }}
+          transition={transition}
+          className="flex items-center flex-row absolute right-5 z-30 bottom-0 w-min h-min gap-3 mix-blend-multiply"
+        >
           <div className="flex flex-col justify-start relative z-10">
-            <div className="text-black text-[80px] font-normal font-Roboto tracking-[8px] uppercase">arrivals</div>
+            <div className="text-black text-[72px] font-semibold tracking-[8px] uppercase">
+              arrivals
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

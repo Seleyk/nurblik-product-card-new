@@ -2,7 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import SingleCard from './pages/SingleCard';
-import Details from './pages/Details';
+import Details from './pages/DetailOg'
 import Cards from './pages/Cards';
 import Profile from './pages/Profile';
 import Carousel from './pages/Carousel';

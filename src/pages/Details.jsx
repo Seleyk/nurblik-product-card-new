@@ -54,7 +54,7 @@ const listVariants = {
 
 const sliderTransition = { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] };
 
-const App = () => {
+const CardDetails = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
   const [colorOpen, setColorOpen] = useState(false);
   const [sizeOpen, setSizeOpen] = useState(false);
@@ -269,4 +269,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default CardDetails;
