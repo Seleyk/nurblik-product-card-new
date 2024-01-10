@@ -259,7 +259,7 @@ const App = () => {
             </div>
             <div class="">
               <button class="btn-1">
-                <span>Hover Me</span>
+                <span>Add to Cart</span>
               </button>
             </div>
           </div>

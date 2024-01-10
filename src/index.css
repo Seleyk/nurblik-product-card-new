@@ -182,7 +182,7 @@ li {
 }
 
 ul {
-  @apply absolute
+  @apply absolute z-50 bg-[#FAF9F6]
 }
 
 .item-select-container ul,
@@ -215,7 +215,7 @@ li {
 }
 .btn-1 span{
   display: block;
-  padding: 25px 80px;
+  padding: 12px 80px;
 }
 .btn-1::before, .btn-1::after{
   content:"";
