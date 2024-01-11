@@ -5,78 +5,80 @@ import ThirdSlide from "../components/sliderItems/ThirdSlide";
 import FourthSlide from "../components/sliderItems/FourthSlide";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { wrap } from "@popmotion/popcorn";
 
+const sliderItems = [
+  <FirstSlide />,
+  <SecondSlide />,
+  <ThirdSlide />,
+  <FourthSlide />,
+];
 
 const Slideshow = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [[imageCount, direction], setImageCount] = useState([0, 0]);
 
-  const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
+  const activeImageIndex = wrap(0, sliderItems.length, imageCount);
 
-  const sliderItems = [
-    <FirstSlide />,
-    <SecondSlide />,
-    <ThirdSlide />,
-    <FourthSlide />,
-  ];
-
-  const nextSlide = () => {
-    if (currentIndex === sliderItems.length - 1) {
-      setCurrentIndex(0);
-      return;
-    }
-    setCurrentIndex(currentIndex + 1);
+  const swipeToImage = (swipeDirection) => {
+    setImageCount([imageCount + swipeDirection, swipeDirection]);
   };
 
-  const prevSlide = () => {
-    if (currentIndex === 0) {
-      setCurrentIndex(sliderItems.length - 1);
-      return;
+  const dragEndHandler = (dragInfo) => {
+    const draggedDistance = dragInfo.offset.x;
+    const swipeThreshold = 50;
+    if (draggedDistance > swipeThreshold) {
+      swipeToImage(-1);
+    } else if (draggedDistance < -swipeThreshold) {
+      swipeToImage(1);
     }
-    setCurrentIndex(currentIndex - 1);
   };
+
+  const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
 
   const sliderVariants = {
-    incoming: (prevSlide) => ({
-      x: prevSlide > 0 ? "100%" : "-100%",
+    incoming: (direction) => ({
+      x: direction > 0 ? "100%" : "-100%",
       scale: 1,
       opacity: 0,
     }),
     active: { x: 0, scale: 1, opacity: 1 },
-    exit: (nextSlide) => ({
-      x: nextSlide > 0 ? "-100%" : "100%",
+    exit: (direction) => ({
+      x: direction > 0 ? "-100%" : "100%",
       scale: 1,
       opacity: 0.2,
     }),
   };
-
+  
   return (
     <div className="relative">
       <button
-        onClick={prevSlide}
+        onClick={() => swipeToImage(-1)}
         className="uppercase text-base font-normal h-12 absolute left-[13rem] top-[85%] flex justify-center items-center z-50"
       >
         Prev
       </button>
-      <AnimatePresence>
-        <motion.div
-          key={sliderItems}
-          initial={{ x: 100 }}
-          animate={{ x: 0 }}
-          variants={sliderVariants}
-          initial="incoming"
-          animate="active"
-          exit="exit"
-          // initial={{ x: nextSlide ? 100 : -100 }}
-          // animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex}rem)` }}
-          // exit={{ x: nextSlide ? -100 : 100 }}
-          transition={transition}
-          className="h-[110vh]"
-        >
-          {sliderItems[currentIndex]}
-        </motion.div>
+      <AnimatePresence initial={false} custom={direction}>
+        <div className="h-[110vh]">
+          <motion.div
+            key={imageCount}
+            custom={direction}
+            variants={sliderVariants}
+            initial="incoming"
+            animate="active"
+            exit="exit"
+            transition={transition}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
+            className="image overflow-hidden hover:cursor-default"
+          >
+            {sliderItems[activeImageIndex]}
+          </motion.div>
+        </div>
       </AnimatePresence>
       <button
-        onClick={nextSlide}
+        onClick={() => swipeToImage(1)}
         className="uppercase text-base font-normal h-12 absolute right-[13rem] top-[85%] flex justify-center items-center z-50"
       >
         Next
