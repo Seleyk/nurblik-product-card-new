@@ -210,6 +210,7 @@ li {
   cursor: pointer;
 /*   margin: 20px 30px; */
   background: #A1A4B0;
+  opacity: 75%;
   width: 100%;
   /* border-radius: 10px; */
 }
@@ -217,6 +218,7 @@ li {
   display: block;
   padding: 12px 80px;
 }
+
 .btn-1::before, .btn-1::after{
   content:"";
   width: 0;
@@ -272,7 +274,7 @@ li {
 }
 
 .btn-1:hover {
-  @apply bg-primary-gray-500 delay-500 transition-all ease-in shadow-2xl
+  @apply bg-primary-gray-500 delay-500 transition-all ease-in shadow-2xl opacity-100
 }
 
 .btn-1 span {

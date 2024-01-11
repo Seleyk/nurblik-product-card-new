@@ -16,7 +16,7 @@ const Carousel = () => {
   return (
     // TO DO: ADD PAGINATION
 
-    <div className="pt-20 bg-[#FCF8F2]">
+    <div className="pt-20 bg-[#F8F7F4]">
       <div className="text-black text-[32px] font-semibold mb-4 ml-40 tracking-[3.20px]">
         FEATURED ITEMS
       </div>

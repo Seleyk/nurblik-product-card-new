@@ -88,7 +88,7 @@ const CardDetails = () => {
   };
 
   return (
-    <div className="bg-[#FAF9F6] h-[100vh]">
+    <div className="bg-[#F8F7F4] h-[100vh]">
       <div className="details-container">
         <div className="slider-container-parent">
           <div className="thumbnails">
