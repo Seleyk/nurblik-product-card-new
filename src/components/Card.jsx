@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Card = ({ item }) => {
-    const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
+  const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
     <motion.div
@@ -27,11 +27,11 @@ const Card = ({ item }) => {
         transition={transition}
         className="flex flex-col px-2 max-w-[350px]"
       >
-        <p className="mr-auto font-medium">{item.title}</p>{" "}
+        <p className="mr-auto font-medium">{item.title}</p>
         <p>${`${item.price / 100}`}</p>
       </motion.span>
     </motion.div>
   );
-}
+};
 
-export default Card
+export default Card;
