@@ -18,10 +18,10 @@ const Slideshow = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
 
   const activeImageIndex = wrap(0, sliderItems.length, imageCount);
-
+    
   const swipeToImage = (swipeDirection) => {
     setImageCount([imageCount + swipeDirection, swipeDirection]);
-  };
+  };  
 
   const dragEndHandler = (dragInfo) => {
     const draggedDistance = dragInfo.offset.x;
@@ -50,7 +50,7 @@ const Slideshow = () => {
   };
   
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <button
         onClick={() => swipeToImage(-1)}
         className="uppercase text-base font-normal h-12 absolute left-[13rem] top-[85%] flex justify-center items-center z-50"

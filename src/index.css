@@ -167,6 +167,7 @@ li {
 .active {
   transform: scaleX(1);
 }
+
 /*  */
 
 .item-select-container > .menu {
