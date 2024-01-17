@@ -1,129 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: 'Roboto', sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
 
-  .item {
-    @apply max-w-[350px] p-8 bg-[#f2f2f2]
-  }
+.item {
+  @apply max-w-[350px] p-8 bg-[#f2f2f2];
+}
 
-  .container {
-    @apply flex items-start justify-between
-  }
+.container {
+  @apply flex items-start justify-between;
+}
 
-  .menu {
-    width: 120px;
+.menu {
+  width: 120px;
 }
 
 /* Filter Style */
 
 .container ul {
-  @apply flex flex-col gap-2 bg-white rounded-xl border-solid border-[1px] border-black
+  @apply flex flex-col gap-2 bg-white rounded-xl border-solid border-[1px] border-black;
 }
 
 .container li {
-  @apply text-black cursor-pointer block
+  @apply text-black cursor-pointer block;
 }
 
 ul {
-  @apply absolute
+  @apply absolute;
 }
 
 .container ul,
 li {
-  @apply list-none m-0 p-2 hover:text-gray-500 duration-75 
+  @apply list-none m-0 p-2 hover:text-gray-500 duration-75;
 }
 
-.container button  {
-  @apply text-black rounded-md border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center
+.container button {
+  @apply text-black rounded-md border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center;
 }
 
 .container button path {
-    @apply fill-black
+  @apply fill-black;
 }
 
 /* button style */
 .cta {
- @apply w-full bg-primary-gray-500 hover:bg-primary-gray-400 h-9 px-[17px] py-0.5 rounded border border-black justify-center items-center gap-2.5 inline-flex cursor-pointer ease-in 
+  @apply w-full bg-primary-gray-500 hover:bg-primary-gray-400 h-9 px-[17px] py-0.5 rounded border border-black justify-center items-center gap-2.5 inline-flex cursor-pointer ease-in;
 }
 
 .cta-real {
-  @apply relative bg-primary-gray-500 opacity-80 border-none cursor-pointer 
+  @apply relative bg-primary-gray-500 opacity-80 border-none cursor-pointer;
 }
 
 .cta-real span {
-  @apply block py-1 
+  @apply block py-1;
 }
 
-.cta-real::before, .cta-real::after {
-  @apply content-[""]	w-0 h-1 absolute transition-all bg-black hover:w-full hover:h-full
+.cta-real::before,
+.cta-real::after {
+  @apply content-[""]	w-0 h-1 absolute transition-all bg-black hover:w-full hover:h-full;
 }
 
 .cta-real::before {
-  @apply top-0 right-0
+  @apply top-0 right-0;
 }
 
 .cta-real::after {
-  @apply left-0 bottom-0
+  @apply left-0 bottom-0;
 }
 
 .cta-real span::before {
-  @apply left-0 top-0
+  @apply left-0 top-0;
 }
 
 .cta-real span::after {
-  @apply right-0 bottom-0
+  @apply right-0 bottom-0;
 }
 
-.cta-real:hover::before, .btn-1:hover::after{
-  @apply delay-0
+.cta-real:hover::before,
+.btn-1:hover::after {
+  @apply delay-0;
 }
 
-.btn-1:hover span::before, .btn-1:hover span::after{
-  @apply delay-200
+.btn-1:hover span::before,
+.btn-1:hover span::after {
+  @apply delay-200;
 }
 
 .cta-txt {
-  @apply text-white text-sm font-semibold cursor-pointer
+  @apply text-white text-sm font-semibold cursor-pointer;
 }
 
 /* INPUT STYLES */
 .input {
-  @apply w-full h-9 px-[17px] py-0.5 bg-zinc-300 rounded border border-black justify-start items-center gap-2.5 inline-flex
+  @apply w-full h-9 px-[17px] py-0.5 bg-zinc-300 rounded border border-black justify-start items-center gap-2.5 inline-flex;
 }
 
 .input-txt {
-  @apply text-black text-sm font-semibold
+  @apply text-black text-sm font-semibold;
 }
 
 /* DETAILS STYLES  */
 .details-container {
-  @apply pt-20 px-16 flex gap-20
+  @apply pt-20 px-16 flex gap-20;
 }
 
 .slider-container-parent {
-  @apply flex flex-row items-start gap-4
+  @apply flex flex-row items-start gap-4;
 }
 
 .slider-container {
-  @apply relative w-[507px] h-[589px] flex flex-col items-center
+  @apply relative w-[507px] h-[589px] flex flex-col items-center;
 }
 
 .slider {
-  @apply relative w-full h-full overflow-hidden max-sm:h-[400px] max-sm:w-[300px]
+  @apply relative w-full h-full overflow-hidden max-sm:h-[400px] max-sm:w-[300px];
 }
 
 .image {
-  @apply absolute h-full w-full bg-cover bg-no-repeat bg-center hover:cursor-grab active:cursor-grabbing
+  @apply absolute h-full w-full bg-cover bg-no-repeat bg-center hover:cursor-grab active:cursor-grabbing;
 }
 
 .image {
@@ -131,31 +134,31 @@ li {
 }
 
 .buttons {
-  @apply absolute bottom-1 flex justify-between w-full
+  @apply absolute bottom-1 flex justify-between w-full;
 }
 
 .buttons button {
-  @apply outline-none border-none select-none py-1 px-3 transition-all
+  @apply outline-none border-none select-none py-1 px-3 transition-all;
 }
 
 .buttons button {
-  transition: .07s ease-out transform;
+  transition: 0.07s ease-out transform;
 }
 
 .thumbnails {
-  @apply flex justify-start flex-col gap-3
+  @apply flex justify-start flex-col gap-3;
 }
 
 .thumbnails .thumbnail-container {
-  @apply relative h-32 w-24 max-sm:h-20 max-sm:w-14 hover:cursor-pointer
+  @apply relative h-32 w-24 max-sm:h-20 max-sm:w-14 hover:cursor-pointer;
 }
 
 .thumbnail-container > img {
-  @apply h-full w-full object-cover object-center
+  @apply h-full w-full object-cover object-center;
 }
 
 .active-indicator {
-  @apply absolute top-0 left-0 h-full w-full pointer-events-none bg-[#5B6175] opacity-95 z-10
+  @apply absolute top-0 left-0 h-full w-full pointer-events-none bg-[#5B6175] opacity-95 z-10;
 }
 
 .active-indicator {
@@ -171,57 +174,58 @@ li {
 /*  */
 
 .item-select-container > .menu {
-  @apply w-full
+  @apply w-full;
 }
 
 .item-select-container ul {
-  @apply flex flex-col gap-2 rounded-lg border-solid border-[1px] border-black w-[338px]
+  @apply flex flex-col gap-2 rounded-lg border-solid border-[1px] border-black w-[338px];
 }
 
 .item-select-container li {
-  @apply text-black cursor-pointer block hover:bg-slate-300 w-full transition-all ease-in
+  @apply text-black cursor-pointer block hover:bg-slate-300 w-full transition-all ease-in;
 }
 
 ul {
-  @apply absolute z-50 bg-[#FAF9F6]
+  @apply absolute z-50 bg-[#FAF9F6];
 }
 
 .item-select-container ul,
 li {
-  @apply list-none m-0 hover:text-gray-500 duration-75 
+  @apply list-none m-0 hover:text-gray-500 duration-75;
 }
 
-.item-select-container button  {
-  @apply text-black rounded-md border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center
+.item-select-container button {
+  @apply text-black rounded-md border-solid border-[1px] border-black py-[10px] px-[20px] text-lg font-bold cursor-pointer w-full text-left mb-[10px] flex justify-between gap-2 items-center;
 }
 
 .item-select-container button path {
-    @apply fill-black
+  @apply fill-black;
 }
 
 /* button */
 
-.btn-1{
-/*   display: inline-block; */
+.btn-1 {
+  /*   display: inline-block; */
   position: relative;
   background: none;
   border: none;
   color: #000;
   font-size: 18px;
   cursor: pointer;
-/*   margin: 20px 30px; */
-  background: #A1A4B0;
+  /*   margin: 20px 30px; */
+  background: #a1a4b0;
   opacity: 75%;
   width: 100%;
   /* border-radius: 10px; */
 }
-.btn-1 span{
+.btn-1 span {
   display: block;
   padding: 12px 80px;
 }
 
-.btn-1::before, .btn-1::after{
-  content:"";
+.btn-1::before,
+.btn-1::after {
+  content: "";
   width: 0;
   height: 2px;
   position: absolute;
@@ -229,55 +233,54 @@ li {
   background: #000;
 }
 
-.btn-1 span::before, .btn-1 span::after{
-  content:"";
-  width:2px;
-  height:0;
+.btn-1 span::before,
+.btn-1 span::after {
+  content: "";
+  width: 2px;
+  height: 0;
   position: absolute;
   transition: all 0.2s linear;
   background: #000;
 }
 
-.btn-1:hover::before, .btn-1:hover::after{
+.btn-1:hover::before,
+.btn-1:hover::after {
   width: 100%;
 }
-.btn-1:hover span::before, .btn-1:hover span::after{
+.btn-1:hover span::before,
+.btn-1:hover span::after {
   height: 100%;
 }
 /*----- button 1 -----*/
-.btn-1::before, .btn-1::after{
-/*   transition-delay: 0.2s; */
-}
-.btn-1 span::before, .btn-1 span::after{
-/*   transition-delay: 0s; */
-}
-.btn-1::before{
+.btn-1::before {
   right: 0;
   top: 0;
 }
-.btn-1::after{
+.btn-1::after {
   left: 0;
   bottom: 0;
 }
-.btn-1 span::before{
+.btn-1 span::before {
   left: 0;
   top: 0;
 }
-.btn-1 span::after{
+.btn-1 span::after {
   right: 0;
   bottom: 0;
 }
-.btn-1:hover::before, .btn-1:hover::after{
+.btn-1:hover::before,
+.btn-1:hover::after {
   transition-delay: 0s;
 }
-.btn-1:hover span::before, .btn-1:hover span::after{
+.btn-1:hover span::before,
+.btn-1:hover span::after {
   transition-delay: 0.2s;
 }
 
 .btn-1:hover {
-  @apply bg-primary-gray-500 delay-500 transition-all ease-in shadow-2xl opacity-100
+  @apply bg-primary-gray-500 delay-500 transition-all ease-in shadow-2xl opacity-100;
 }
 
 .btn-1 span {
-  @apply active:bg-primary-gray-400
+  @apply active:bg-primary-gray-400;
 }
