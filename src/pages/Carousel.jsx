@@ -22,12 +22,12 @@ const Carousel = () => {
       </div>
       <motion.div
         ref={carousel}
-        className="carousel ml-40 cursor-grab overflow-hidden"
+        className=" ml-40 cursor-grab overflow-hidden"
       >
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
-          className="inner-carousel flex gap-8"
+          className=" flex gap-8"
         >
           {items.map((item) => (
             <motion.div
