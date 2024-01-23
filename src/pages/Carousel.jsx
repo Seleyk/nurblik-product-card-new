@@ -11,6 +11,17 @@ const Carousel = () => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
 
+  const handleScroll = (direction) => {
+    const { current } = carousel;
+    const scrollAmount = window.innerHeight > 1800 ? 270 : 210;
+
+    if (direction == "left") {
+      current.scrollLeft -= scrollAmount;
+    } else {
+      current.scrollRight += scrollAmount;
+    }
+  };
+
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
@@ -20,45 +31,56 @@ const Carousel = () => {
       <div className="text-black text-[32px] font-semibold mb-4 ml-40 tracking-[3.20px]">
         FEATURED ITEMS
       </div>
-      <motion.div ref={carousel} className=" ml-40 cursor-grab overflow-hidden">
-        <motion.div
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-          className=" flex gap-8"
-        >
-          {items.map((item) => (
-            <motion.div
-              key={item.id}
-              layout
-              className="flex flex-col gap-1)"
-              exit={{ x: -450, position: "absolute" }}
-              whileInView={{ y: [50, 0], opacity: [0, 1] }}
-              transition={{ delay: 0.06, ...transition }}
-            >
-              {/* <Link to={"/details"}> */}
-              <div className="h-[380px] w-[350px] overflow-hidden rounded-xl cursor-pointer">
-                <motion.img
-                  whileHover={{ scale: 1.2 }}
-                  className="w-full h-30vh object-cover rounded-xl"
-                  src={item.img}
-                  alt=" T-shirt"
-                  transition={transition}
-                />
-              </div>
-              {/* </Link>  */}
-
-              <motion.span
-                exit={{ opacity: 0 }}
-                transition={transition}
-                className="flex flex-col px-2 max-w-[350px]"
+      <div className="flex items-center justify-center">
+        <div className="flex mx-10 bg-slate-400 h-full flex-col items-center justify-center">
+          <div onClick={() => handleScroll("right")} className="flex items-center justify-center w-20">
+            <img src="assets/rightArrow.svg" alt="" />
+          </div>
+          <div onClick={() => handleScroll("left")} className="flex items-center justify-center w-20">
+            <img src="assets/leftArrow.svg" alt="" />
+          </div>
+        </div>
+        <motion.div className="cursor-grab overflow-hidden">
+          <motion.div
+            ref={carousel}
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+            className="flex gap-8"
+          >
+            {items.map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                className="flex flex-col gap-1)"
+                exit={{ x: -450, position: "absolute" }}
+                whileInView={{ y: [50, 0], opacity: [0, 1] }}
+                transition={{ delay: 0.06, ...transition }}
               >
-                <p className="mr-auto font-medium">{item.title}</p>{" "}
-                <p>${`${item.price / 100}`}</p>
-              </motion.span>
-            </motion.div>
-          ))}
+                {/* <Link to={"/details"}> */}
+                <div className="h-[380px] w-[350px] overflow-hidden rounded-xl cursor-pointer">
+                  <motion.img
+                    whileHover={{ scale: 1.2 }}
+                    className="w-full h-30vh object-cover rounded-xl"
+                    src={item.img}
+                    alt=" T-shirt"
+                    transition={transition}
+                  />
+                </div>
+                {/* </Link>  */}
+
+                <motion.span
+                  exit={{ opacity: 0 }}
+                  transition={transition}
+                  className="flex flex-col px-2 max-w-[350px]"
+                >
+                  <p className="mr-auto font-medium">{item.title}</p>
+                  <p>${`${item.price / 100}`}</p>
+                </motion.span>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
       <div className="width-full flex justify-end mr-10 pb-16">
         <button className="h-9 justify-center items-center inline-flex">
           <div className="px-4 py-2 rounded justify-start items-center gap-1.5 flex">
