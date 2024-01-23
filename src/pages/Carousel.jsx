@@ -11,14 +11,15 @@ const Carousel = () => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
 
+
   const handleScroll = (direction) => {
     const { current } = carousel;
-    const scrollAmount = window.innerHeight > 1800 ? 270 : 210;
+    const scrollAmount = window.innerHeight > 1800 ? 270*1.75 : 210*1.75;
 
-    if (direction == "left") {
+    if (direction === "left") {
       current.scrollLeft -= scrollAmount;
     } else {
-      current.scrollRight += scrollAmount;
+      current.scrollLeft += scrollAmount;
     }
   };
 
@@ -32,15 +33,15 @@ const Carousel = () => {
         FEATURED ITEMS
       </div>
       <div className="flex items-center justify-center">
-        <div className="flex mx-10 bg-slate-400 h-full flex-col items-center justify-center">
-          <div onClick={() => handleScroll("right")} className="flex items-center justify-center w-20">
-            <img src="assets/rightArrow.svg" alt="" />
-          </div>
-          <div onClick={() => handleScroll("left")} className="flex items-center justify-center w-20">
-            <img src="assets/leftArrow.svg" alt="" />
-          </div>
+        <div className="flex gap-2 mx-10 h-full flex-col items-center justify-center">
+          <motion.div onClick={() => handleScroll("right")} className=" cursor-pointer flex items-center justify-center max-md:w-10 w-20">
+            <motion.img src="assets/rightArrow.svg" alt="" />
+          </motion.div>
+          <motion.div onClick={() => handleScroll("left")} className=" cursor-pointer flex items-center justify-center max-md:w-10 w-20">
+            <motion.img src="assets/leftArrow.svg" alt="" />
+          </motion.div>
         </div>
-        <motion.div className="cursor-grab overflow-hidden">
+        <motion.div ref={carousel} className="cursor-grab overflow-hidden">
           <motion.div
             ref={carousel}
             drag="x"
