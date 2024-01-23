@@ -8,9 +8,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit');
+    console.log("submit");
   };
-
 
   return (
     <div className="w-full h-[100vh]">
@@ -36,7 +35,7 @@ const Login = () => {
               </span>
             </div>
           </div>
-          <div >
+          <div>
             <div className="mb-4">
               <div onSubmit={handleSubmit} className="flex flex-col gap-2 mb-1">
                 <TextField
@@ -67,14 +66,10 @@ const Login = () => {
                 Forgot your password
               </a>
             </div>
-            <button  className="cta" type='submit'>
-              <span className="cta-txt">
-                Sign In
-              </span>
+            <button className="cta" type="submit">
+              <span className="cta-txt">Sign In</span>
             </button>
-            <p className="flex items-center justify-center my-6">
-              or
-            </p>
+            <p className="flex items-center justify-center my-6">or</p>
             <div className="flex flex-col gap-3">
               <a className="cta">
                 <span className="cta-txt">Continue with Google</span>

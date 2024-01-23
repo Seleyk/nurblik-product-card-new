@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { items } from '../data'
-import Card from '../components/Card';
+import React, { useEffect, useState } from "react";
+import { items } from "../data";
+import Card from "../components/Card";
 // import Filter from '../components/Filter';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Cards = () => {
   const [filteredItems, setFilteredItems] = useState([]);
@@ -12,43 +12,35 @@ const Cards = () => {
   const [sizeOpen, setSizeOpen] = useState(false);
   const [sortOpen, setSortOpen] = useState(false);
 
-
   useEffect(() => {
-    setFilteredItems(items)
-  },[]);
+    setFilteredItems(items);
+  }, []);
 
   useEffect(() => {
     if (sort === "newest") {
-      setFilteredItems((prev) => 
-        [...prev].sort((a, b) => a.id - b.id)
-      );
+      setFilteredItems((prev) => [...prev].sort((a, b) => a.id - b.id));
     } else if (sort === "asc") {
-      setFilteredItems((prev) =>
-        [...prev].sort((a, b) => a.price - b.price)
-      );
+      setFilteredItems((prev) => [...prev].sort((a, b) => a.price - b.price));
     } else {
-      setFilteredItems((prev) => 
-        [...prev].sort((a, b) => b.price - a.price)
-      );
+      setFilteredItems((prev) => [...prev].sort((a, b) => b.price - a.price));
     }
-
   }, [sort]);
 
   const menuVariants = {
     open: { rotate: 180, transition: { duration: 0.2 } },
     closed: { rotate: 0, transition: { duration: 0.2 } },
   };
-  
-const itemVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-};
-  
-const listVariants = {
+
+  const itemVariants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 },
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  };
+
+  const listVariants = {
     open: {
       clipPath: "inset(0% 0% 0% 0% round 10px)",
       transition: {
@@ -56,19 +48,18 @@ const listVariants = {
         bounce: 0,
         duration: 0.7,
         delayChildren: 0.3,
-        staggerChildren: 0.05
-      }
+        staggerChildren: 0.05,
+      },
     },
     closed: {
       clipPath: "inset(10% 50% 90% 50% round 10px)",
       transition: {
         type: "spring",
         bounce: 0,
-        duration: 0.3
-      }
-    }
-};
-
+        duration: 0.3,
+      },
+    },
+  };
 
   return (
     <div className="p-10">
@@ -95,7 +86,6 @@ const listVariants = {
               <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setColorOpen(!colorOpen)}
-                
               >
                 Color
                 <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
@@ -151,10 +141,10 @@ const listVariants = {
             <motion.button
               whileTap={{ scale: 0.97 }}
               onClick={() => setSortOpen(!sortOpen)}
-              className='capitalize'
+              className="capitalize"
             >
               {sort}
-              <motion.div   variants={menuVariants} style={{ originY: 0.55 }}>
+              <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
                 <svg width="15" height="15" viewBox="0 0 20 20">
                   <path d="M0 7 L 20 7 L 10 16" />
                 </svg>
@@ -170,7 +160,12 @@ const listVariants = {
               >
                 Price: Low to High
               </motion.li>
-              <motion.li onClick={(e) => setSort("newest")} variants={itemVariants}>Price: High to Low</motion.li>
+              <motion.li
+                onClick={(e) => setSort("newest")}
+                variants={itemVariants}
+              >
+                Price: High to Low
+              </motion.li>
             </motion.ul>
           </motion.nav>
         </div>
@@ -188,6 +183,6 @@ const listVariants = {
       </div>
     </div>
   );
-}
+};
 
-export default Cards
+export default Cards;

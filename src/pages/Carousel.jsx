@@ -20,10 +20,7 @@ const Carousel = () => {
       <div className="text-black text-[32px] font-semibold mb-4 ml-40 tracking-[3.20px]">
         FEATURED ITEMS
       </div>
-      <motion.div
-        ref={carousel}
-        className=" ml-40 cursor-grab overflow-hidden"
-      >
+      <motion.div ref={carousel} className=" ml-40 cursor-grab overflow-hidden">
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -width }}

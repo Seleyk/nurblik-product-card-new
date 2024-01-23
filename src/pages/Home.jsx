@@ -1,7 +1,7 @@
-import React from 'react'
-import Carousel from './Carousel'
-import Slideshow from './Slideshow'
-import SliderNew from './SliderNew'
+import React from "react";
+import Carousel from "./Carousel";
+import Slideshow from "./Slideshow";
+import SliderNew from "./SliderNew";
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
       <Carousel />
       <SliderNew />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

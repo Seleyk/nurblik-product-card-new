@@ -18,10 +18,10 @@ const Slideshow = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
 
   const activeImageIndex = wrap(0, sliderItems.length, imageCount);
-    
+
   const swipeToImage = (swipeDirection) => {
     setImageCount([imageCount + swipeDirection, swipeDirection]);
-  };  
+  };
 
   const dragEndHandler = (dragInfo) => {
     const draggedDistance = dragInfo.offset.x;
@@ -48,7 +48,7 @@ const Slideshow = () => {
       opacity: 0.2,
     }),
   };
-  
+
   return (
     <div className="relative overflow-hidden">
       <button
