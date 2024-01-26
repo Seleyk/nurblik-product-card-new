@@ -257,9 +257,9 @@ const CardDetails = () => {
                 </motion.ul>
               </motion.nav>
             </div>
-            <div class="">
-              <button class="btn-1">
-                <span>Add to Cart</span>
+            <div>
+              <button className="cta">
+                <span className="cta-txt" >Add to Cart</span>
               </button>
             </div>
           </div>

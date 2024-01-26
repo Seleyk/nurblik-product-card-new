@@ -53,46 +53,8 @@ li {
 
 /* button style */
 .cta {
-  @apply w-full bg-primary-gray-500 hover:bg-primary-gray-400 h-9 px-[17px] py-0.5 rounded border border-black justify-center items-center gap-2.5 inline-flex cursor-pointer ease-in;
-}
-
-.cta-real {
-  @apply relative bg-primary-gray-500 opacity-80 border-none cursor-pointer;
-}
-
-.cta-real span {
-  @apply block py-1;
-}
-
-.cta-real::before,
-.cta-real::after {
-  @apply content-[""]	w-0 h-1 absolute transition-all bg-black hover:w-full hover:h-full;
-}
-
-.cta-real::before {
-  @apply top-0 right-0;
-}
-
-.cta-real::after {
-  @apply left-0 bottom-0;
-}
-
-.cta-real span::before {
-  @apply left-0 top-0;
-}
-
-.cta-real span::after {
-  @apply right-0 bottom-0;
-}
-
-.cta-real:hover::before,
-.btn-1:hover::after {
-  @apply delay-0;
-}
-
-.btn-1:hover span::before,
-.btn-1:hover span::after {
-  @apply delay-200;
+  @apply w-full bg-primary-gray-500 hover:bg-primary-gray-400 h-9 px-[17px] py-5 rounded border border-black justify-center items-center gap-2.5 inline-flex cursor-pointer ;
+  transition: all 0.2s linear;
 }
 
 .cta-txt {
