@@ -109,25 +109,27 @@ const CardDetails = () => {
           </div>
           <div className="slider-container">
             <div className="slider">
-              <AnimatePresence initial={false} custom={direction}>
-                <motion.div
-                  key={imageCount}
-                  style={{
-                    backgroundImage: `url(${items[activeImageIndex].img})`,
-                  }}
-                  custom={direction}
-                  variants={sliderVariants}
-                  initial="incoming"
-                  animate="active"
-                  exit="exit"
-                  transition={sliderTransition}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={1}
-                  onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-                  className="image"
-                />
-              </AnimatePresence>
+              <motion.div>
+                <AnimatePresence initial={false} custom={direction}>
+                  <motion.div
+                    key={imageCount}
+                    style={{
+                      backgroundImage: `url(${items[activeImageIndex].img})`,
+                    }}
+                    custom={direction}
+                    variants={sliderVariants}
+                    initial="incoming"
+                    animate="active"
+                    exit="exit"
+                    transition={sliderTransition}
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={1}
+                    onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
+                    className="image"
+                  />
+                </AnimatePresence>
+              </motion.div>
             </div>
 
             <div className="buttons">

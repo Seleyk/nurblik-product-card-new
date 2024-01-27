@@ -45,7 +45,7 @@ const Slideshow = () => {
     exit: (direction) => ({
       x: direction > 0 ? "-100%" : "100%",
       scale: 1,
-      opacity: 0.2,
+      opacity: 0.33,
     }),
   };
 
@@ -57,8 +57,8 @@ const Slideshow = () => {
       >
         Prev
       </button>
-      <AnimatePresence initial={false} custom={direction}>
-        <div className="h-[110vh]">
+      <div className="h-[110vh]">
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={imageCount}
             custom={direction}
@@ -75,8 +75,8 @@ const Slideshow = () => {
           >
             {sliderItems[activeImageIndex]}
           </motion.div>
-        </div>
-      </AnimatePresence>
+        </AnimatePresence>
+      </div>
       <button
         onClick={() => swipeToImage(1)}
         className="uppercase text-base font-normal h-12 absolute right-[13rem] top-[85%] flex justify-center items-center z-50"

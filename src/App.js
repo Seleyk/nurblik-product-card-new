@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Slideshow from "./pages/Slideshow";
 import CardDetails from "./pages/Details";
+import DetailOg from "./pages/DetailOg";
 
 const App = () => {
   let location = useLocation();

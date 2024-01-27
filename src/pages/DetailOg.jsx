@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { items } from "../data";
 import { motion } from "framer-motion";
 
-const Details = () => {
+const DetailOg = () => {
   const transition = { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
@@ -52,4 +52,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default DetailOg;

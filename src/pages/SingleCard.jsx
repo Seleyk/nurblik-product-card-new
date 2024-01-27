@@ -10,7 +10,7 @@ const SingleCard = () => {
     <div className="h-[100vh] flex items-center justify-center">
       <motion.div
         className="flex flex-col gap-1"
-        exit={{ x: -450 }}
+        exit={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'  }}
         whileInView={{ y: [50, 0], opacity: [0, 1] }}
         transition={{ delay: 0.72, ...transition }}
       >
