@@ -91,7 +91,17 @@ const CardDetails = () => {
     <div className="bg-[#F8F7F4] h-[100vh]">
       <div className="details-container">
         <div className="slider-container-parent">
-          <div className="thumbnails">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 3,
+              delayChildren: 0.3,
+              staggerChildren: 0.05,
+              ...sliderTransition,
+            }}
+            className="thumbnails"
+          >
             {items.map((image, idx) => (
               <div
                 key={image.id}
@@ -106,31 +116,59 @@ const CardDetails = () => {
                 />
               </div>
             ))}
-          </div>
+          </motion.div>
           <div className="slider-container">
-            <div className="slider">
-              <motion.div>
-                <AnimatePresence initial={false} custom={direction}>
-                  <motion.div
-                    key={imageCount}
-                    style={{
-                      backgroundImage: `url(${items[activeImageIndex].img})`,
-                    }}
-                    custom={direction}
-                    variants={sliderVariants}
-                    initial="incoming"
-                    animate="active"
-                    exit="exit"
-                    transition={sliderTransition}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={1}
-                    onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-                    className="image"
-                  />
-                </AnimatePresence>
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                // x: 50,
+                // position: "fixed",
+                // // top: 100,
+                // right: 150,
+                // display: "flex",
+                // alignItems: "center",
+                // justifyContent: "center",
+                // width: "350px",
+                // height: "380px",
+                borderRadius: ".75rem",
+                // transform: "translate(-50%, -50%)",
+                // zIndex: 999,
+              }}
+              animate={{
+                opacity: 1,
+                // x: 0,
+                // position: "relative",
+                // top: 0,
+                // left: 0,
+                // height: "100%",
+                // width: "100%",
+                borderRadius: 0,
+                // transform: 0,
+                // zIndex: 0,
+              }}
+              transition={sliderTransition}
+              className="slider"
+            >
+              <AnimatePresence initial={false} custom={direction}>
+                <motion.div
+                  key={imageCount}
+                  style={{
+                    backgroundImage: `url(${items[activeImageIndex].img})`,
+                  }}
+                  custom={direction}
+                  variants={sliderVariants}
+                  initial="incoming"
+                  animate="active"
+                  exit="exit"
+                  transition={sliderTransition}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={1}
+                  onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
+                  className="image"
+                />
+              </AnimatePresence>
+            </motion.div>
 
             <div className="buttons">
               <button onClick={() => swipeToImage(-1)}>PREV</button>
@@ -140,18 +178,22 @@ const CardDetails = () => {
         </div>
         <div className="flex flex-col gap-16">
           <div className="flex flex-col gap-6">
-            <div class="text-black text-6xl font-bold font-['Roboto'] tracking-widest">
+            <motion.div
+              initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.5, ...sliderTransition }}
+              class="text-black text-6xl font-bold font-['Roboto'] tracking-widest"
+            >
               “OFF-WHITE” X AIR-JORDAN 1
-            </div>
-            <div class=" text-neutral-500 text-lg font-medium font-['Roboto'] tracking-widest">
+            </motion.div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ delay: 2.5, staggerChildren: 1, ...sliderTransition }} class=" text-neutral-500 text-lg font-medium font-['Roboto'] tracking-widest">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus
               rutrum tellus pellentesque eu. Arcu dui vivamus arcu felis
               bibendum ut tristique et egestas. Nisi vitae suscipit tellus
               mauris a diam maecenas sed enim.
-            </div>
+            </motion.div>
           </div>
-          <div className="">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3, ...sliderTransition }} className="">
             <div className="item-select-container flex w-full gap-4">
               <motion.nav
                 initial={false}
@@ -264,7 +306,7 @@ const CardDetails = () => {
                 <span className="cta-txt">Add to Cart</span>
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
