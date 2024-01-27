@@ -100,7 +100,7 @@ const CardDetails = () => {
               staggerChildren: 0.05,
               ...sliderTransition,
             }}
-            className="thumbnails"
+            className="thumbnails max-md:hidden"
           >
             {items.map((image, idx) => (
               <div
@@ -121,30 +121,11 @@ const CardDetails = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                // x: 50,
-                // position: "fixed",
-                // // top: 100,
-                // right: 150,
-                // display: "flex",
-                // alignItems: "center",
-                // justifyContent: "center",
-                // width: "350px",
-                // height: "380px",
                 borderRadius: ".75rem",
-                // transform: "translate(-50%, -50%)",
-                // zIndex: 999,
               }}
               animate={{
                 opacity: 1,
-                // x: 0,
-                // position: "relative",
-                // top: 0,
-                // left: 0,
-                // height: "100%",
-                // width: "100%",
                 borderRadius: 0,
-                // transform: 0,
-                // zIndex: 0,
               }}
               transition={sliderTransition}
               className="slider"
@@ -176,16 +157,31 @@ const CardDetails = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-16">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75, ...sliderTransition }}
+          className="flex flex-col gap-16 max-md:absolute max-md:w-full max-md:px-6 max-md:pt-6 max-md:bg-[#F8F7F4] max-md:bg-opacity-85 max-md:rounded-tl-3xl max-md:rounded-tr-3xl max-md:overflow-y-scroll max-md:overflow-x-hidden max-md:bottom-1"
+        >
           <div className="flex flex-col gap-6">
             <motion.div
-              initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.5, ...sliderTransition }}
-              class="text-black text-6xl font-bold font-['Roboto'] tracking-widest"
+              class="text-black text-6xl font-bold max-md:text-lg max-md:font-semibold font-['Roboto'] tracking-widest"
             >
               “OFF-WHITE” X AIR-JORDAN 1
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}  transition={{ delay: 2.5, staggerChildren: 1, ...sliderTransition }} class=" text-neutral-500 text-lg font-medium font-['Roboto'] tracking-widest">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: 2.5,
+                staggerChildren: 1,
+                ...sliderTransition,
+              }}
+              class=" text-neutral-500 text-lg font-medium max-md:text-zinc-600 max-md:text-xs max-md:font-medium font-['Roboto'] tracking-widest"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus
               rutrum tellus pellentesque eu. Arcu dui vivamus arcu felis
@@ -193,7 +189,12 @@ const CardDetails = () => {
               mauris a diam maecenas sed enim.
             </motion.div>
           </div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3, ...sliderTransition }} className="">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3, ...sliderTransition }}
+            className=""
+          >
             <div className="item-select-container flex w-full gap-4">
               <motion.nav
                 initial={false}
@@ -307,7 +308,7 @@ const CardDetails = () => {
               </button>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

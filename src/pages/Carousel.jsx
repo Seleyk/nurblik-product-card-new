@@ -60,7 +60,7 @@ const Carousel = () => {
                 className="flex flex-col gap-1)"
                 exit={{ opacity: 0 }}
                 whileInView={{ y: [50, 0], opacity: [0, 1] }}
-                transition={{ delay: 0.72, ...transition }}
+                transition={{ delay: 0.05, ...transition }}
               >
                 <Link to={"/details"}>
                 <div className="h-[380px] w-[350px] overflow-hidden rounded-xl cursor-pointer">

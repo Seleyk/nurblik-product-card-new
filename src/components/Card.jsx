@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from "@mui/material";
 
 const Card = ({ item }) => {
+  const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
@@ -11,7 +13,7 @@ const Card = ({ item }) => {
       className="flex flex-col gap-1"
       exit={{ opacity: 0 }}
       whileInView={{ y: [50, 0], opacity: [0, 1] }}
-      transition={{ delay: 0.72, ...transition }}
+      transition={{ delay: 0.25, ...transition }}
     >
       <Link to={"/details"}>
         <div className="h-[380px] max-w-[350px] overflow-hidden rounded-xl cursor-pointer">
