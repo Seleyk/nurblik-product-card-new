@@ -259,7 +259,7 @@ const CardDetails = () => {
             </div>
             <div>
               <button className="cta">
-                <span className="cta-txt" >Add to Cart</span>
+                <span className="cta-txt">Add to Cart</span>
               </button>
             </div>
           </div>
