@@ -58,11 +58,11 @@ const Carousel = () => {
                 key={item.id}
                 layout
                 className="flex flex-col gap-1)"
-                exit={{ x: -450, position: "absolute" }}
+                exit={{ opacity: 0 }}
                 whileInView={{ y: [50, 0], opacity: [0, 1] }}
-                transition={{ delay: 0.06, ...transition }}
+                transition={{ delay: 0.72, ...transition }}
               >
-                {/* <Link to={"/details"}> */}
+                <Link to={"/details"}>
                 <div className="h-[380px] w-[350px] overflow-hidden rounded-xl cursor-pointer">
                   <motion.img
                     whileHover={{ scale: 1.2 }}
@@ -72,7 +72,7 @@ const Carousel = () => {
                     transition={transition}
                   />
                 </div>
-                {/* </Link>  */}
+                </Link> 
 
                 <motion.span
                   exit={{ opacity: 0 }}
