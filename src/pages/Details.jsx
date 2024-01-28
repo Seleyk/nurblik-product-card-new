@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 import { items } from "../data";
+import { useMediaQuery } from "@mui/material";
 
 const sliderVariants = {
   incoming: (direction) => ({
@@ -60,6 +61,7 @@ const CardDetails = () => {
   const [sizeOpen, setSizeOpen] = useState(false);
   const [size, setSize] = useState("Size");
   const [color, setColor] = useState("Color");
+  const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
 
   const activeImageIndex = wrap(0, items.length, imageCount);
 
@@ -88,7 +90,7 @@ const CardDetails = () => {
   };
 
   return (
-    <div className="bg-[#F8F7F4] h-[100vh]">
+    <div className="bg-[#F8F7F4]">
       <div className="details-container">
         <div className="slider-container-parent">
           <motion.div
@@ -164,14 +166,41 @@ const CardDetails = () => {
           className="flex flex-col gap-16 max-md:absolute max-md:w-full max-md:px-6 max-md:pt-6 max-md:bg-[#F8F7F4] max-md:bg-opacity-85 max-md:rounded-tl-3xl max-md:rounded-tr-3xl max-md:overflow-y-scroll max-md:overflow-x-hidden max-md:bottom-1"
         >
           <div className="flex flex-col gap-6">
-            <motion.div
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1.5, ...sliderTransition }}
-              class="text-black text-6xl font-bold max-md:text-lg max-md:font-semibold font-['Roboto'] tracking-widest"
-            >
-              “OFF-WHITE” X AIR-JORDAN 1
-            </motion.div>
+            <div className=" flex flex-col gap-3 max-md:gap-[6px] max-md:flex-col-reverse text-xs">
+              <motion.div
+                initial={
+                  isNonMobileScreen
+                    ? { y: 50, opacity: 0 }
+                    : { y: -25, opacity: 0 }
+                }
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 2, ...sliderTransition }}
+                className="uppercase text-zinc-600 text-sm font-medium font-['Roboto'] tracking-wide max-md:text-zinc-600 max-md:text-xs max-md:font-medium max-md:font-['Roboto'] max-md:tracking-wide"
+              >
+                {["shoes", "sneakers"].map((item) => (
+                  <span>
+                    /
+                    <a
+                      className="hover:underline"
+                      href={`/${item}`}
+                    >{`${item} `}</a>
+                  </span>
+                ))}
+              </motion.div>
+              <div className="flex flex-col gap-6 max-md:flex-row max-md:justify-between justify-center max-md:items-center">
+                <motion.div
+                  initial={{ y: -10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 1.5, ...sliderTransition }}
+                  class="uppercase text-black text-5xl font-bold max-md:text-lg max-md:font-semibold font-['Roboto'] tracking-widest"
+                >
+                  “OFF-WHITE” X AIR-JORDAN 1
+                </motion.div>
+                <motion.div className="text-[#636363] text-2xl font-medium font-['Roboto'] tracking-widest max-md:text-sm max-md:font-medium max-md:tracking-wide">
+                  ${15999 / 100}
+                </motion.div>
+              </div>
+            </div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -180,13 +209,18 @@ const CardDetails = () => {
                 staggerChildren: 1,
                 ...sliderTransition,
               }}
-              class=" text-neutral-500 text-lg font-medium max-md:text-zinc-600 max-md:text-xs max-md:font-medium font-['Roboto'] tracking-widest"
+              className="flex flex-col gap-2"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus
-              rutrum tellus pellentesque eu. Arcu dui vivamus arcu felis
-              bibendum ut tristique et egestas. Nisi vitae suscipit tellus
-              mauris a diam maecenas sed enim.
+              <div className="text-black text-2xl font-medium font-['Roboto'] tracking-widest max-md:text-sm max-md:font-bold ">
+                Description
+              </div>
+              <div class=" text-neutral-500 text-lg font-medium max-md:text-zinc-600 max-md:text-xs max-md:font-medium font-['Roboto'] tracking-widest">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Tellus rutrum tellus pellentesque eu. Arcu dui vivamus arcu
+                felis bibendum ut tristique et egestas. Nisi vitae suscipit
+                tellus mauris a diam maecenas sed enim.
+              </div>
             </motion.div>
           </div>
           <motion.div

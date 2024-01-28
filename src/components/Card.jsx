@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
 
 const Card = ({ item }) => {
-  const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
