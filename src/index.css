@@ -12,6 +12,26 @@
   font-family: "Roboto", sans-serif;
 }
 
+
+* {
+  ::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+  opacity: .75;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6f6f6f;
+  opacity: .75;
+  border-radius: 100px;
+}
+}
+
+
 .item {
   @apply max-w-[350px] p-8 bg-[#f2f2f2];
 }

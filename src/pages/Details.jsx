@@ -163,7 +163,7 @@ const CardDetails = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.75, ...sliderTransition }}
-          className="flex flex-col gap-16 max-md:absolute max-md:w-full max-md:px-6 max-md:pt-6 max-md:bg-[#F8F7F4] max-md:bg-opacity-85 max-md:rounded-tl-3xl max-md:rounded-tr-3xl max-md:overflow-y-scroll max-md:overflow-x-hidden max-md:bottom-1"
+          className="flex flex-col gap-16 max-md:absolute max-md:w-full max-md:px-6 max-md:pt-6 max-md:bg-[#F8F7F4] max-md:bg-opacity-85 max-md:rounded-tl-3xl max-md:rounded-tr-3xl max-md:overflow-y-auto max-md:overflow-x-hidden max-md:bottom-1"
         >
           <div className="flex flex-col gap-6">
             <div className=" flex flex-col gap-3 max-md:gap-[6px] max-md:flex-col-reverse text-xs">
@@ -196,7 +196,12 @@ const CardDetails = () => {
                 >
                   “OFF-WHITE” X AIR-JORDAN 1
                 </motion.div>
-                <motion.div className="text-[#636363] text-2xl font-medium font-['Roboto'] tracking-widest max-md:text-sm max-md:font-medium max-md:tracking-wide">
+                <motion.div
+                  initial={ isNonMobileScreen ? { y: -20, opacity: 0 } : { x: -20, opacity: 0 }}
+                  animate={ isNonMobileScreen ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }  }
+                  transition={{ delay: 1.6, ...sliderTransition }}
+                  className="text-[#636363] text-2xl font-medium font-['Roboto'] tracking-widest max-md:text-sm max-md:font-medium max-md:tracking-wide"
+                >
                   ${15999 / 100}
                 </motion.div>
               </div>
