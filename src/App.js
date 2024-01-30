@@ -11,13 +11,14 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Slideshow from "./pages/Slideshow";
 import CardDetails from "./pages/Details";
-import DetailOg from "./pages/DetailOg";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   let location = useLocation();
 
   return (
     <AnimatePresence initial={false} mode="wait">
+      <Navbar />
       <Routes location={location} key={location.pathname}>
         <Route index path="/" element={<Home />} />
         <Route path="/singlecard" element={<SingleCard />} />
