@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Slideshow from "./pages/Slideshow";
 import CardDetails from "./pages/Details";
 import Navbar from "./components/Navbar";
+import Cart from "./pages/Cart";
 
 const App = () => {
   let location = useLocation();
@@ -29,7 +30,8 @@ const App = () => {
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/carousel/" element={<Carousel />} />
         <Route path="/slider/" element={<SliderNew />} />
-        <Route path="/slideshow" element={<Slideshow />} />
+        <Route path="/slideshow" element={<Slideshow />} /> 
+        <Route path="/cart" element={<Cart />} /> 
       </Routes>
     </AnimatePresence>
   );
