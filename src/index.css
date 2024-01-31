@@ -255,7 +255,7 @@ li {
 }
 
 .btn-1:hover {
-  @apply bg-primary-gray-500 delay-500 transition-all ease-in shadow-2xl opacity-100;
+  @apply delay-500 transition-all ease-in shadow-2xl opacity-100;
 }
 
 .btn-1 span {
