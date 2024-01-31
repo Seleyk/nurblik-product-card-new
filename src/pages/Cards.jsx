@@ -64,15 +64,18 @@ const Cards = () => {
   return (
     <div className="p-10">
       <div className="flex flex-col gap-3 mb-8">
-        <h1 className="text-center text-3xl font-medium uppercase">Apparel</h1>
-        <h1 className="text-center text-md font-[300] uppercase">
+        <div className="flex flex-col">
+          <h1 className="text-center text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
+            Shop the {`"off-white"`}
+          </h1>
+          <h1 className="text-center text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
+            collection
+          </h1>
+        </div>
+        <h1 className="text-center self-center text-md font-[300] uppercase max-w-lg">
           Our best collection of Lorem ipsum yet! with a new dolor sit amet,
           consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore et dolore magna aliqua. Consectetur a erat nam at lectus urna
-          duis. Diam phasellus vestibulum lorem sed risus ultricies tristique
-          nulla aliquet. Integer enim neque volutpat ac tincidunt vitae semper.
-          Urna porttitor rhoncus dolor purus non. Lorem mollis aliquam ut
-          porttitor leo a diam sollicitudin. Est
         </h1>
       </div>
       <div className="mb-24">
