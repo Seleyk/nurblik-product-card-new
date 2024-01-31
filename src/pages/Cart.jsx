@@ -6,13 +6,36 @@ const Cart = () => {
       <div className="w-[60%] max-md:w-full">
         <h1>Shopping cart</h1>
         <div className="mt-8">
-          <div className="flex gap-4 mt-4 ">
-            <div className="h-[158px] w-[155px] rounded-xl bg-black"></div>
-            <div className="flex max-md:flex-col justify-between">
-              <div className="">list</div>
-              <div className="">rest of list</div>
+          <>
+            <div className="flex gap-4 mt-4">
+              <div className="h-[158px] w-[155px] rounded-xl bg-black"></div>
+              <div className="flex flex-auto justify-between max-md:flex-col ">
+                <div className="flex flex-col justify-between">
+                  <div className="">
+                    <div className="">title</div>
+                    <div className="mt-2 uppercase">subtitle</div>
+                  </div>
+                  <div className="">
+                    <div className="">Color: {`Blue`}</div>
+                    <div className="mt-2">Color: {`Blue`}</div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="">H</div>
+                    <div className="">D</div>
+                  </div>
+                </div>
+                <div className="flex justify-between max-md:flex-row-reverse flex-col">
+                  <div className="">$Price</div>
+                  <div className="flex gap-3">
+                    <div className="">-</div>
+                    <div className="">2</div>
+                    <div className="">+</div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+            <div className="bg-black h-[1.5px] w-full mt-4"></div>
+          </>
         </div>
       </div>
       <div className="w-[40%] max-md:w-full">
