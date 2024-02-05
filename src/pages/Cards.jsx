@@ -62,35 +62,95 @@ const Cards = () => {
   };
 
   return (
-    <div className="p-10">
-      <div className="flex flex-col gap-3 mb-8">
-        <div className="flex flex-col">
-          <h1 className="text-center text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
-            Shop the {`"off-white"`}
-          </h1>
-          <h1 className="text-center text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
-            collection
+    <div className="">
+      <div className="h-[100vh]">
+        <div className="h-full bg-slate-400">b</div>
+      </div>
+      <div className="p-10">
+        <div className="flex flex-col gap-3 mb-8">
+          <div className="flex flex-col">
+            <h1 className="text-center text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
+              Shop the {`"off-white"`}
+            </h1>
+            <h1 className="text-center text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
+              collection
+            </h1>
+          </div>
+          <h1 className="text-center self-center text-md font-[300] uppercase max-w-lg">
+            Our best collection of Lorem ipsum yet! with a new dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Consectetur a erat nam at lectus urna
           </h1>
         </div>
-        <h1 className="text-center self-center text-md font-[300] uppercase max-w-lg">
-          Our best collection of Lorem ipsum yet! with a new dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Consectetur a erat nam at lectus urna
-        </h1>
-      </div>
-      <div className="mb-24">
-        <div className="container">
-          <div className="flex flex-col gap-2">
+        <div className="mb-24">
+          <div className="container">
+            <div className="flex flex-col gap-2">
+              <motion.nav
+                initial={false}
+                animate={colorOpen ? "open" : "closed"}
+                className="menu"
+              >
+                <motion.button
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setColorOpen(!colorOpen)}
+                >
+                  Color
+                  <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
+                    <svg width="15" height="15" viewBox="0 0 20 20">
+                      <path d="M0 7 L 20 7 L 10 16" />
+                    </svg>
+                  </motion.div>
+                </motion.button>
+                <motion.ul
+                  variants={listVariants}
+                  style={{ pointerEvents: colorOpen ? "auto" : "none" }}
+                >
+                  <motion.li variants={itemVariants}>Red </motion.li>
+                  <motion.li variants={itemVariants}>Orange </motion.li>
+                  <motion.li variants={itemVariants}> Green </motion.li>
+                  <motion.li variants={itemVariants}>Black </motion.li>
+                  <motion.li variants={itemVariants}> Grey </motion.li>
+                </motion.ul>
+              </motion.nav>
+              <motion.nav
+                initial={false}
+                animate={sizeOpen ? "open" : "closed"}
+                className="menu"
+              >
+                <motion.button
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setSizeOpen(!sizeOpen)}
+                >
+                  Size
+                  <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
+                    <svg width="15" height="15" viewBox="0 0 20 20">
+                      <path d="M0 7 L 20 7 L 10 16" />
+                    </svg>
+                  </motion.div>
+                </motion.button>
+                <motion.ul
+                  variants={listVariants}
+                  style={{ pointerEvents: sizeOpen ? "auto" : "none" }}
+                >
+                  <motion.li variants={itemVariants}>Small </motion.li>
+                  <motion.li variants={itemVariants}>medium </motion.li>
+                  <motion.li variants={itemVariants}> large </motion.li>
+                  <motion.li variants={itemVariants}>X-Large</motion.li>
+                  <motion.li variants={itemVariants}> 2X-Large</motion.li>
+                </motion.ul>
+              </motion.nav>
+            </div>
             <motion.nav
               initial={false}
-              animate={colorOpen ? "open" : "closed"}
+              animate={sortOpen ? "open" : "closed"}
               className="menu"
             >
               <motion.button
                 whileTap={{ scale: 0.97 }}
-                onClick={() => setColorOpen(!colorOpen)}
+                onClick={() => setSortOpen(!sortOpen)}
+                className="capitalize"
               >
-                Color
+                {sort}
                 <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
                   <svg width="15" height="15" viewBox="0 0 20 20">
                     <path d="M0 7 L 20 7 L 10 16" />
@@ -99,90 +159,35 @@ const Cards = () => {
               </motion.button>
               <motion.ul
                 variants={listVariants}
-                style={{ pointerEvents: colorOpen ? "auto" : "none" }}
+                style={{ pointerEvents: sortOpen ? "auto" : "none" }}
               >
-                <motion.li variants={itemVariants}>Red </motion.li>
-                <motion.li variants={itemVariants}>Orange </motion.li>
-                <motion.li variants={itemVariants}> Green </motion.li>
-                <motion.li variants={itemVariants}>Black </motion.li>
-                <motion.li variants={itemVariants}> Grey </motion.li>
-              </motion.ul>
-            </motion.nav>
-            <motion.nav
-              initial={false}
-              animate={sizeOpen ? "open" : "closed"}
-              className="menu"
-            >
-              <motion.button
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setSizeOpen(!sizeOpen)}
-              >
-                Size
-                <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
-                  <svg width="15" height="15" viewBox="0 0 20 20">
-                    <path d="M0 7 L 20 7 L 10 16" />
-                  </svg>
-                </motion.div>
-              </motion.button>
-              <motion.ul
-                variants={listVariants}
-                style={{ pointerEvents: sizeOpen ? "auto" : "none" }}
-              >
-                <motion.li variants={itemVariants}>Small </motion.li>
-                <motion.li variants={itemVariants}>medium </motion.li>
-                <motion.li variants={itemVariants}> large </motion.li>
-                <motion.li variants={itemVariants}>X-Large</motion.li>
-                <motion.li variants={itemVariants}> 2X-Large</motion.li>
+                <motion.li
+                  onClick={(e) => setSort("asc")}
+                  variants={itemVariants}
+                >
+                  Price: Low to High
+                </motion.li>
+                <motion.li
+                  onClick={(e) => setSort("newest")}
+                  variants={itemVariants}
+                >
+                  Price: High to Low
+                </motion.li>
               </motion.ul>
             </motion.nav>
           </div>
-          <motion.nav
-            initial={false}
-            animate={sortOpen ? "open" : "closed"}
-            className="menu"
-          >
-            <motion.button
-              whileTap={{ scale: 0.97 }}
-              onClick={() => setSortOpen(!sortOpen)}
-              className="capitalize"
-            >
-              {sort}
-              <motion.div variants={menuVariants} style={{ originY: 0.55 }}>
-                <svg width="15" height="15" viewBox="0 0 20 20">
-                  <path d="M0 7 L 20 7 L 10 16" />
-                </svg>
-              </motion.div>
-            </motion.button>
-            <motion.ul
-              variants={listVariants}
-              style={{ pointerEvents: sortOpen ? "auto" : "none" }}
-            >
-              <motion.li
-                onClick={(e) => setSort("asc")}
-                variants={itemVariants}
-              >
-                Price: Low to High
-              </motion.li>
-              <motion.li
-                onClick={(e) => setSort("newest")}
-                variants={itemVariants}
-              >
-                Price: High to Low
-              </motion.li>
-            </motion.ul>
-          </motion.nav>
         </div>
-      </div>
-      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-        {filteredItems.map((item) => (
-          <motion.div
-            key={item.id}
-            layout
-            className="flex items-start justify-center"
-          >
-            <Card item={item} sort={sort} />
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {filteredItems.map((item) => (
+            <motion.div
+              key={item.id}
+              layout
+              className="flex items-start justify-center"
+            >
+              <Card item={item} sort={sort} />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
