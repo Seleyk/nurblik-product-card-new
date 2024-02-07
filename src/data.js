@@ -96,3 +96,18 @@ export const items = [
     price: 4582,
   },
 ];
+
+export const userList = [
+  {
+    id: '658255a423d3658404284ec2',
+    firstName: 'Patience',
+    lastName: 'Seley',
+    email: 'seleyk@gmail.com'
+  },
+  {
+    id: '658255a423d3658404284ec3',
+    firstName: 'Steven',
+    lastName: 'Seley',
+    email: 'seley@gmail.com'
+  }
+]

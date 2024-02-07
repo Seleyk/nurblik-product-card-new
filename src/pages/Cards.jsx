@@ -105,11 +105,11 @@ const Cards = () => {
                   variants={listVariants}
                   style={{ pointerEvents: colorOpen ? "auto" : "none" }}
                 >
-                  <motion.li variants={itemVariants}>Red </motion.li>
-                  <motion.li variants={itemVariants}>Orange </motion.li>
-                  <motion.li variants={itemVariants}> Green </motion.li>
-                  <motion.li variants={itemVariants}>Black </motion.li>
-                  <motion.li variants={itemVariants}> Grey </motion.li>
+                  <motion.li variants={itemVariants}>Red</motion.li>
+                  <motion.li variants={itemVariants}>Orange</motion.li>
+                  <motion.li variants={itemVariants}>Green</motion.li>
+                  <motion.li variants={itemVariants}>Black</motion.li>
+                  <motion.li variants={itemVariants}>Grey</motion.li>
                 </motion.ul>
               </motion.nav>
               <motion.nav

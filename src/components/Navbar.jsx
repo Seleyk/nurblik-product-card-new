@@ -1,9 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
 import { navLinks } from "../Constants";
+import { userList } from "../data";
+import UserMenu from "./UserMenu";
 
 const Navbar = () => {
   const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
+
+  const user = userList[0];
+
+  console.log(user);
 
   return (
     <div className="w-full absolute z-50 h-20 px-8 justify-between items-center inline-flex">
@@ -27,8 +33,10 @@ const Navbar = () => {
         </div>
       )}
       <div className="justify-center items-center gap-8 flex max-lg:pl-8 pl-52">
-        {isNonMobileScreen && (
-          <NavLink to={`/profile`}>
+        {isNonMobileScreen && user ? (
+          <UserMenu user={userList}/>
+          ) : !isNonMobileScreen && !user ? (
+          <NavLink to={`/login`}>
             <img
               src="/assets/user.svg"
               alt="notifications"
@@ -36,16 +44,16 @@ const Navbar = () => {
               height={24}
             />
           </NavLink>
-        )}
+        ) : null}
         <NavLink to={`/cart`}>
-        <img
-          src="/assets/cart.svg"
-          alt="notifications"
-          width={24}
-          height={24}
-        />
+          <img
+            src="/assets/cart.svg"
+            alt="notifications"
+            width={24}
+            height={24}
+          />
         </NavLink>
-        {!isNonMobileScreen ? (
+        {!isNonMobileScreen && (
           <img
             src="/assets/menu.svg"
             alt="notifications"
@@ -53,7 +61,7 @@ const Navbar = () => {
             height={24}
             className="cursor-pointer"
           />
-        ) : null}
+        )}
       </div>
     </div>
   );
