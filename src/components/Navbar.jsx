@@ -98,15 +98,14 @@ const Navbar = () => {
           />
         </NavLink>
         {!isNonMobileScreen && (
-          <div className="relative">
-            <img
-              src="/assets/menu.svg"
-              alt="notifications"
-              width={24}
-              height={24}
-              className="cursor-pointer sticky top-7 z-50"
-              onClick={toggleMenu}
-            />
+          <div className="relative" onClick={toggleMenu}>
+            <div
+              className={`nav-icon1 ${open ? "open" : ""} cursor-pointer sticky top-0 z-50`}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         )}
       </div>
@@ -117,7 +116,7 @@ const Navbar = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="z-40 fixed left-0 top-0 w-full h-screen origin-top bg-yellow-400 text-black p-10 overflow-hidden no-scrollbar"
+            className="z-40 fixed left-0 top-0 w-full h-screen origin-top bg-[#F8F7F4] text-black p-10 overflow-hidden no-scrollbar"
           >
             <div className="flex h-full flex-col">
               <motion.div
@@ -139,9 +138,9 @@ const Navbar = () => {
                         delay: 0.95,
                         ...transition,
                       }}
-                      className="overflow-hidden text-3xl font-medium"
+                      className="overflow-hidden hover:text-4xl text-3xl font-medium cursor-pointer ease-in-out duration-[.25s]"
                     >
-                      <motion.div>{link.label}</motion.div>
+                      <motion.a href={link.route}>{link.label}</motion.a>
                     </motion.div>
                   );
                 })}

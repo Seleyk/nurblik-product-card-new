@@ -64,6 +64,77 @@ li {
   @apply fill-black;
 }
 
+/* Hamburger */
+
+.nav-icon1 {
+  width: 24px;
+  height: 15px;
+  position: relative;
+/*   margin: 50px auto; */
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .75s ease-in-out;
+  -moz-transition: .75s ease-in-out;
+  -o-transition: .75s ease-in-out;
+  transition: .75s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 3.5px;
+  width: 100%;
+  background: #000;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  -o-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+}
+
+.nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+.nav-icon1 span:nth-child(2) {
+  top: 8px;
+}
+
+.nav-icon1 span:nth-child(3) {
+  top: 16px;
+}
+
+.nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+
 /* button style */
 .cta {
   @apply w-full bg-primary-gray-500 hover:bg-primary-gray-400 h-9 px-[17px] py-5 rounded border border-black justify-center items-center gap-2.5 inline-flex cursor-pointer;
