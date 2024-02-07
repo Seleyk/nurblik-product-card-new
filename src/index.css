@@ -382,7 +382,7 @@ li {
   transition: background-color 0.5s ease-in-out;
 }
 .user-data.active{
-  background-color: #fff;
+  background-color: #F8F7F4;
 }
 .user-data .rounded-image{
   width: 45px;
@@ -393,10 +393,10 @@ li {
 .user-menu{
   position: absolute;
   min-width: 240px;
-  bottom: -300px;
+  bottom: -280px;
   right: 0;
-  background-color: var(--main-color);
-  color:#fff;
+  background-color: #F8F7F4;
+  color:#000;
   border-radius: 10px;
   z-index: 500;
   box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
@@ -415,7 +415,7 @@ li {
   border-bottom: 10px solid var(--main-color);
 }
 .user-menu li{
-  @apply py-3 px-2 text-lg cursor-pointer;
+  @apply py-2 px-2 text-lg cursor-pointer;
   transition: 0.5s all;
 }
 .user-menu li:first-of-type{
@@ -428,7 +428,7 @@ li {
   border-bottom: 1px solid #fff;
 } */
 .user-menu li:last-of-type{
-  border-top: 1px solid #fff;
+  border-top: 1px solid #000;
 }
 .user-menu li:hover{
   background-color: #e6b265;

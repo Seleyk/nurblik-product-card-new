@@ -47,14 +47,14 @@ const UserMenu = ({ user }) => {
                   <div className=" text-lg flex items-center justify-center">
                     Hello, {user[0].firstName}!
                   </div>
-                  <div className=" text-sm w-full flex items-center justify-center">
+                  <div className="text-gray-500 text-sm w-full flex items-center justify-center">
                     {user[0].email}
                   </div>
                 </div>
-                <li>Account</li>
-                <li>Help & Support</li>
-                <li>Settings</li>
-                <li>Logout</li>
+                <li className="flex items-center"> <span className="mx-2"><img src="/assets/user.svg" width={20} alt="Profile" /></span> Account</li>
+                <li className="flex items-center"> <span className="mx-2"><img src="/assets/heart.svg" width={20} alt="Profile" /></span> Help & Support</li>
+                <li className="flex items-center"> <span className="mx-2"><img src="/assets/settings.svg" width={20} alt="Profile" /></span> Settings</li>
+                <li className="flex items-center"> <span className="mx-2"><img src="/assets/logout.svg" width={20} alt="Profile" /></span> Logout</li>
               </motion.ul>
             </>
           )}
