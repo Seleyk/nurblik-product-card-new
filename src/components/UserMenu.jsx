@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const UserMenu = ({ user }) => {
-  const [isMenu, setIsMenu] = useState(true);
+  const [isMenu, setIsMenu] = useState(false);
 
   const menuRef = useRef();
 
@@ -43,10 +43,18 @@ const UserMenu = ({ user }) => {
                 className="user-menu"
                 ref={menuRef}
               >
-                <li>{user[0].email}</li>
-                <li>Profile</li>
+                <div className="my-4">
+                  <div className=" text-lg flex items-center justify-center">
+                    Hello, {user[0].firstName}!
+                  </div>
+                  <div className=" text-sm w-full flex items-center justify-center">
+                    {user[0].email}
+                  </div>
+                </div>
+                <li>Account</li>
+                <li>Help & Support</li>
+                <li>Settings</li>
                 <li>Logout</li>
-                <li>hello</li>
               </motion.ul>
             </>
           )}

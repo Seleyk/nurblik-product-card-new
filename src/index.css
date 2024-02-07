@@ -321,7 +321,8 @@ li {
 }
 .user-menu{
   position: absolute;
-  bottom: -260px;
+  min-width: 240px;
+  bottom: -300px;
   right: 0;
   background-color: var(--main-color);
   color:#fff;
@@ -343,19 +344,20 @@ li {
   border-bottom: 10px solid var(--main-color);
 }
 .user-menu li{
-  padding: 10px 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
+  @apply py-3 px-2 text-lg cursor-pointer;
   transition: 0.5s all;
 }
 .user-menu li:first-of-type{
-  border-radius: 10px 10px 0 0;
+  /* border-radius: 10px 10px 0 0; */
 }
 .user-menu li:last-of-type{
   border-radius: 0 0 10px 10px ;
 }
-.user-menu li:not(:last-of-type){
+/* .user-menu li:not(:last-of-type){
   border-bottom: 1px solid #fff;
+} */
+.user-menu li:last-of-type{
+  border-top: 1px solid #fff;
 }
 .user-menu li:hover{
   background-color: #e6b265;

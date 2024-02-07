@@ -13,7 +13,11 @@ const SecondSlide = () => {
           alt=""
         />
       </div>
-      <motion.div whileInView={{ y:[50, 0], opacity:[0,1] }} transition={transition} className="absolute w-[705px] text-center text-stone-100 text-[80px] font-bold tracking-[6.40px] right-1/4 bottom-[10%] z-40">
+      <motion.div
+        whileInView={{ y: [50, 0], opacity: [0, 1] }}
+        transition={transition}
+        className="absolute w-[705px] text-center text-stone-100 text-[80px] font-bold tracking-[6.40px] right-1/4 bottom-[10%] z-40"
+      >
         THE TECHWEAR COLLECTION IS HERE
       </motion.div>
     </motion.div>
