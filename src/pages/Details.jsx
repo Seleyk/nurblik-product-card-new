@@ -175,16 +175,16 @@ const CardDetails = () => {
                 }
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 2, ...sliderTransition }}
-                className="uppercase text-zinc-600 text-sm font-medium font-['Roboto'] tracking-wide max-md:text-zinc-600 max-md:text-xs max-md:font-medium max-md:font-['Roboto'] max-md:tracking-wide"
+                className="flex items-center gap-1 uppercase text-zinc-600 text-sm font-medium font-['Roboto'] tracking-wide max-md:text-zinc-600 max-md:text-xs max-md:font-medium max-md:font-['Roboto'] max-md:tracking-wide"
               >
                 {["shoes", "sneakers"].map((item) => (
-                  <span>
-                    /
+                  <div className="flex gap-[2px] items-center" >
+                    <div className="text-black" >&#9679;{" "}</div>
                     <a
                       className="hover:underline"
                       href={`/${item}`}
                     >{`${item} `}</a>
-                  </span>
+                  </div>
                 ))}
               </motion.div>
               <div className="flex flex-col gap-6 max-md:flex-row max-md:justify-between justify-center max-md:items-center">
@@ -197,8 +197,16 @@ const CardDetails = () => {
                   “OFF-WHITE” X AIR-JORDAN 1
                 </motion.div>
                 <motion.div
-                  initial={ isNonMobileScreen ? { y: -20, opacity: 0 } : { x: -20, opacity: 0 }}
-                  animate={ isNonMobileScreen ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }  }
+                  initial={
+                    isNonMobileScreen
+                      ? { y: -20, opacity: 0 }
+                      : { x: -20, opacity: 0 }
+                  }
+                  animate={
+                    isNonMobileScreen
+                      ? { y: 0, opacity: 1 }
+                      : { x: 0, opacity: 1 }
+                  }
                   transition={{ delay: 1.6, ...sliderTransition }}
                   className="text-[#636363] text-2xl font-medium font-['Roboto'] tracking-widest max-md:text-sm max-md:font-medium max-md:tracking-wide"
                 >
