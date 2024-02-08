@@ -14,7 +14,7 @@ const ThirdSlide = () => {
         alt=""
       />
       <motion.div
-        whileInView={{ opacity: [0, 1], left: [0, 16] }}
+        whileInView={{ opacity: [0, 1], x: [0, 16] }}
         transition={{delay: .75, ...transition}}
         className="z-10 uppercase left-10 max-md:left-1 bottom-96 max-md:bottom-60 h-[298px] absolute text-black text-[80px] max-md:text-5xl font-bold tracking-[8px]"
       >
@@ -23,9 +23,9 @@ const ThirdSlide = () => {
         Jackets
       </motion.div>
       <motion.div
-        whileInView={{ opacity: [0, 1], right: [0, 40] }}
+        whileInView={{ opacity: [0, 1], x: [0, -40] }}
         transition={{delay: .75, ...transition}}
-        className="uppercase right-10 max-md:right-7 bottom-0 max-md:bottom-0 max-md:z-30 h-[298px] max-md:h-[240px] absolute text-black text-[80px] max-md:text-5xl font-bold tracking-[8px]"
+        className="uppercase right-10 max-md:right-1 bottom-0 max-md:bottom-0 max-md:z-30 h-[298px] max-md:h-[240px] absolute text-black text-[80px] max-md:text-5xl font-bold tracking-[8px]"
       >
         50% off
       </motion.div>
