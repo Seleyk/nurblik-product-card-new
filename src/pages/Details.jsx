@@ -182,7 +182,7 @@ const CardDetails = () => {
                     <div className="text-black" >&#9679;{" "}</div>
                     <a
                       className="hover:underline"
-                      href={`/${item}`}
+                      href={`collections/${item}`}
                     >{`${item} `}</a>
                   </div>
                 ))}
