@@ -1,5 +1,5 @@
 import React from "react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const FourthSlide = () => {
   const transition = { duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] };
