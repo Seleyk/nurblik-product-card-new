@@ -246,10 +246,8 @@ li {
   @apply fill-black;
 }
 
-/* button */
-
+/* Shop Now button */
 .btn-1 {
-  /*   display: inline-block; */
   position: relative;
   background: none;
   border: none;
@@ -260,11 +258,8 @@ li {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   cursor: pointer;
   font-weight: 500;
-  /*   margin: 20px 30px; */
   background: transparent;
-  /* opacity: 75%; */
   width: 100%;
-  /* border-radius: 10px; */
 }
 .btn-1 span {
   padding: 12px 20px;
