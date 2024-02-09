@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const UserMenu = ({ user }) => {
   const [isMenu, setIsMenu] = useState(false);
+  const navigate = useNavigate();
 
   const menuRef = useRef();
 
@@ -21,13 +23,12 @@ const UserMenu = ({ user }) => {
   const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
-    <li className="user-menu-container">
+    <div className="user-menu-container">
       <div
         className={isMenu ? "user-data active" : "user-data"}
         onClick={() => setIsMenu(!isMenu)}
       >
-        {/* <img src={user.image} alt="user" className="rounded-image" /> */}
-        <div className="bg-black rounded-full h-8 w-8"></div>
+        <img src="/assets/headshot.jpg" alt="user" className="rounded-image" />
         <AnimatePresence>
           {isMenu && (
             <>
@@ -51,32 +52,35 @@ const UserMenu = ({ user }) => {
                     {user[0].email}
                   </div>
                 </div>
-                <li className="flex items-center">
-                  {" "}
-                  <span className="mx-2">
-                    <img src="/assets/user.svg" width={20} alt="Profile" />
-                  </span>{" "}
-                  Account
-                </li>
-                <li className="flex items-center">
-                  {" "}
+                <NavLink to={`/profile`}>
+                  <li className="flex items-center">
+                    <span className="mx-2">
+                      <img src="/assets/user.svg" width={20} alt="Profile" />
+                    </span>
+                    Account
+                  </li>
+                </NavLink>
+                <li
+                  onClick={() => {
+                    navigate("/test");
+                  }}
+                  className="flex items-center"
+                >
                   <span className="mx-2">
                     <img src="/assets/heart.svg" width={20} alt="Profile" />
-                  </span>{" "}
+                  </span>
                   Help & Support
                 </li>
                 <li className="flex items-center">
-                  {" "}
                   <span className="mx-2">
                     <img src="/assets/settings.svg" width={20} alt="Profile" />
-                  </span>{" "}
+                  </span>
                   Settings
                 </li>
                 <li className="flex items-center">
-                  {" "}
                   <span className="mx-2">
                     <img src="/assets/logout.svg" width={20} alt="Profile" />
-                  </span>{" "}
+                  </span>
                   Logout
                 </li>
               </motion.ul>
@@ -84,7 +88,7 @@ const UserMenu = ({ user }) => {
           )}
         </AnimatePresence>
       </div>
-    </li>
+    </div>
   );
 };
 

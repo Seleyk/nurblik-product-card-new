@@ -100,7 +100,9 @@ const Navbar = () => {
         {!isNonMobileScreen && (
           <div className="relative" onClick={toggleMenu}>
             <div
-              className={`nav-icon1 ${open ? "open" : ""} cursor-pointer sticky top-0 z-50`}
+              className={`nav-icon1 ${
+                open ? "open" : ""
+              } cursor-pointer sticky top-0 z-50`}
             >
               <span></span>
               <span></span>
@@ -144,6 +146,20 @@ const Navbar = () => {
                     </motion.div>
                   );
                 })}
+                <motion.a
+                  initial={{ y: "20px", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    delayChildren: 0.3,
+                    staggerChildren: 0.05,
+                    delay: 0.95,
+                    ...transition,
+                  }}
+                  href={"/profile"}
+                  className="overflow-hidden hover:text-4xl text-3xl font-medium cursor-pointer ease-in-out duration-[.25s]"
+                >
+                  Account
+                </motion.a>
               </motion.div>
             </div>
           </motion.div>
