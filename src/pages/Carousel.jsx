@@ -25,14 +25,12 @@ const Carousel = () => {
   const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
-    // TO DO: ADD PAGINATION
-
     <div className="pt-20 bg-[#F8F7F4]">
       <div className="text-black text-[32px] font-semibold mb-4 ml-40 tracking-[3.20px]">
         FEATURED ITEMS
       </div>
       <div className="flex items-center justify-center">
-        <div className="flex gap-2 mx-10 h-full flex-col items-center justify-center">
+        <div className="max-md:hidden flex gap-2 mx-10 h-full flex-col items-center justify-center">
           <motion.div
             onClick={() => handleScroll("right")}
             className=" cursor-pointer flex items-center justify-center max-md:w-10 w-20"
