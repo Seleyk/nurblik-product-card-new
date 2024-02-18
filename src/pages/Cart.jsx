@@ -13,7 +13,7 @@ const Cart = () => {
           {items.map((item) => (
             <div key={item.id}>
               <div className="flex gap-4 mt-4">
-                <motion.div
+                <div
                   style={{
                     backgroundImage: `url(${item.img})`,
                   }}
