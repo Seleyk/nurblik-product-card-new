@@ -54,8 +54,9 @@ const Slideshow = () => {
     <div className="relative overflow-hidden">
       <button
         onClick={() => swipeToImage(-1)}
-        className="max-md:hidden uppercase text-base font-normal h-12 absolute max-md:left-4 left-[13rem] top-[85%] flex justify-center items-center z-40"
+        className="max-md:hidden uppercase text-base font-normal h-12 absolute max-md:left-4 left-[13rem] top-[85%] flex justify-center items-center gap-2 z-40"
       >
+        <div className="w-7 bg-black h-[2px]"></div>
         Prev
       </button>
       <div className="h-[110dvh]">
@@ -80,9 +81,10 @@ const Slideshow = () => {
       </div>
       <button
         onClick={() => swipeToImage(1)}
-        className="max-md:hidden uppercase text-base font-normal h-12 absolute max-md:right-4 right-[13rem] top-[85%] flex justify-center items-center z-40"
+        className="max-md:hidden uppercase text-base font-normal h-12 absolute max-md:right-4 right-[13rem] top-[85%] flex justify-center items-center gap-2 z-40"
       >
         Next
+        <div className="w-7 bg-black h-[2px]"></div>
       </button>
       <Link
         className="absolute max-md:right-[18px] right-[80px] bottom-[15px] flex justify-center items-center z-40"
