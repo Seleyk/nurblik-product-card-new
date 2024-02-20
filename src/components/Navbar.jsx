@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { useMediaQuery } from "@mui/material";
+import { Badge, useMediaQuery } from "@mui/material";
 import { navLinks } from "../Constants";
 import { userList } from "../data";
 import UserMenu from "./UserMenu";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { items } from "../data";
 
 const Navbar = () => {
   const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
@@ -51,9 +52,9 @@ const Navbar = () => {
     },
   };
 
-  const user = userList[0];
+  const cartAmount = items.length
 
-  console.log(user);
+  const user = userList[0];
 
   return (
     <div className="w-full absolute z-50 h-20 px-8 justify-between items-center inline-flex">
@@ -90,12 +91,14 @@ const Navbar = () => {
           </NavLink>
         ) : null}
         <NavLink to={`/cart`}>
-          <img
-            src="/assets/cart.svg"
-            alt="notifications"
-            width={24}
-            height={24}
-          />
+          <Badge badgeContent={cartAmount} color="primary">
+            <img
+              src="/assets/cart.svg"
+              alt="notifications"
+              width={24}
+              height={24}
+            />
+          </Badge>
         </NavLink>
         {!isNonMobileScreen && (
           <div className="relative" onClick={toggleMenu}>
