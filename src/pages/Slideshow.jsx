@@ -92,7 +92,7 @@ const Slideshow = () => {
       >
         <button class="btn-1 max-w-[180px]">
           <span className="flex items-center justify-center gap-2.5">
-            <div className="">SHOP NOW </div>
+            <div className="">SHOP NOW</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"

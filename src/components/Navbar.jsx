@@ -11,10 +11,21 @@ const Navbar = () => {
   const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
   const [open, setOpen] = useState(false);
 
-  const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
+  const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 4.6] };
 
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
+  };
+  const containerVars = {
+    initial: {
+    },
+    open: {
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.09,
+        staggerDirection: 1,
+      },
+    },
   };
   const menuVars = {
     initial: {
@@ -36,23 +47,8 @@ const Navbar = () => {
       },
     },
   };
-  const containerVars = {
-    initial: {
-      transition: {
-        staggerChildren: 0.09,
-        staggerDirection: -1,
-      },
-    },
-    open: {
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.09,
-        staggerDirection: 1,
-      },
-    },
-  };
 
-  const cartAmount = items.length
+  const cartAmount = items.length;
 
   const user = userList[0];
 
@@ -125,13 +121,13 @@ const Navbar = () => {
           >
             <div className="flex h-full flex-col">
               <motion.div
-                variants={containerVars}
+                // variants={containerVars}
                 initial="initial"
                 animate="open"
                 exit="initial"
                 className="flex flex-col h-full justify-center font-lora items-center gap-4 "
               >
-                {navLinks.map((link) => {
+                {navLinks.map((link, idx) => {
                   return (
                     <motion.div
                       // whileInView={{ opacity: [0, 1] }}
@@ -140,7 +136,7 @@ const Navbar = () => {
                       transition={{
                         delayChildren: 0.3,
                         staggerChildren: 0.05,
-                        delay: 0.95,
+                        delay: `1.${idx}`,
                         ...transition,
                       }}
                       className="overflow-hidden hover:text-4xl text-3xl font-medium cursor-pointer ease-in-out duration-[.25s]"
@@ -155,7 +151,7 @@ const Navbar = () => {
                   transition={{
                     delayChildren: 0.3,
                     staggerChildren: 0.05,
-                    delay: 0.95,
+                    delay: 1.5,
                     ...transition,
                   }}
                   href={"/profile"}
