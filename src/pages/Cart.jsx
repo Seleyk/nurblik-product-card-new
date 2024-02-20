@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { items } from "../data";
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   return (
@@ -13,12 +14,14 @@ const Cart = () => {
           {items.map((item) => (
             <div key={item.id}>
               <div className="flex gap-4 mt-4">
-                <div
-                  style={{
-                    backgroundImage: `url(${item.img})`,
-                  }}
-                  className="h-[158px] min-w-[155px] rounded-xl bg-cover bg-no-repeat bg-center "
-                />
+                <NavLink to={`/details`}>
+                  <div
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                    }}
+                    className="h-[158px] min-w-[155px] rounded-xl bg-cover bg-no-repeat bg-center "
+                  />
+                </NavLink>
                 <div className="flex flex-auto justify-between max-md:flex-col ">
                   <div className="flex flex-col justify-between">
                     <div className="">

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 import { items } from "../data";
-import { useMediaQuery } from "@mui/material";
+import { IconButton, useMediaQuery } from "@mui/material";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 const sliderVariants = {
   incoming: (direction) => ({
@@ -61,9 +63,20 @@ const CardDetails = () => {
   const [sizeOpen, setSizeOpen] = useState(false);
   const [size, setSize] = useState("Size");
   const [color, setColor] = useState("Color");
+  const [quantity, setQuantity] = useState(1);
   const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
 
+  console.log(quantity);
+
   const activeImageIndex = wrap(0, items.length, imageCount);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
   const swipeToImage = (swipeDirection) => {
     setImageCount([imageCount + swipeDirection, swipeDirection]);
@@ -178,8 +191,8 @@ const CardDetails = () => {
                 className="flex items-center gap-1 uppercase text-zinc-600 text-sm font-medium font-['Roboto'] tracking-wide max-md:text-zinc-600 max-md:text-xs max-md:font-medium max-md:font-['Roboto'] max-md:tracking-wide"
               >
                 {["shoes", "sneakers"].map((item) => (
-                  <div className="flex gap-[2px] items-center" >
-                    <div className="text-black" >&#9679;{" "}</div>
+                  <div className="flex gap-[2px] items-center">
+                    <div className="text-black">&#9679; </div>
                     <a
                       className="hover:underline"
                       href={`collections/${item}`}
@@ -242,6 +255,15 @@ const CardDetails = () => {
             transition={{ delay: 3, ...sliderTransition }}
             className=""
           >
+            <div className="flex flex-row gap-2 items-center mb-2">
+              <IconButton variant="secondary" onClick={() => handleQuantity("dec")}>
+                <RemoveCircleOutlineIcon />
+              </IconButton>
+              <div className="">{quantity}</div>
+              <IconButton variant="standard" onClick={() => handleQuantity("inc")}>
+                <AddCircleOutlineIcon />
+              </IconButton>
+            </div>
             <div className="item-select-container flex w-full gap-4">
               <motion.nav
                 initial={false}
