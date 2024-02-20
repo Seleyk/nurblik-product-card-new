@@ -70,7 +70,7 @@ const Navbar = () => {
             <NavLink
               to={link.route}
               key={link.label}
-              className="text-secondary-700 uppercase text-xs font-medium font-['Roboto'] tracking-wide"
+              className="navlink text-secondary-700 uppercase text-xs font-medium font-['Roboto'] tracking-wide"
             >
               {link.label}
             </NavLink>
