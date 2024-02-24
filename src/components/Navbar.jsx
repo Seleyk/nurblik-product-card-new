@@ -56,7 +56,7 @@ const Navbar = () => {
     <div className="w-full absolute z-50 h-20 px-8 justify-between items-center inline-flex">
       <NavLink
         to="/"
-        className="text-secondary-700 max-lg:text-[24px] max-lg:tracking-[2.20px] text-[32px] font-bold font-['Roboto'] tracking-[3.20px]"
+        className="text-secondary-700 max-lg:text-[18px] max-lg:tracking-[1.50px] text-[32px] font-bold font-['Roboto'] tracking-[3.20px]"
       >
         NURBLIK KOUTURE
       </NavLink>
@@ -73,7 +73,7 @@ const Navbar = () => {
           ))}
         </div>
       )}
-      <div className="justify-center items-center gap-8 flex max-lg:pl-8 pl-52">
+      <div className="justify-center items-center gap-8 flex max-lg:pl-0 pl-52">
         {isNonMobileScreen && user ? (
           <UserMenu user={userList} />
         ) : !isNonMobileScreen && !user ? (
