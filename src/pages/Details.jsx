@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 import { items } from "../data";
 import { IconButton, useMediaQuery } from "@mui/material";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 const sliderVariants = {
   incoming: (direction) => ({
@@ -256,11 +256,17 @@ const CardDetails = () => {
             className=""
           >
             <div className="flex flex-row gap-2 items-center mb-2">
-              <IconButton variant="secondary" onClick={() => handleQuantity("dec")}>
+              <IconButton
+                variant="secondary"
+                onClick={() => handleQuantity("dec")}
+              >
                 <RemoveCircleOutlineIcon />
               </IconButton>
               <div className="">{quantity}</div>
-              <IconButton variant="standard" onClick={() => handleQuantity("inc")}>
+              <IconButton
+                variant="standard"
+                onClick={() => handleQuantity("inc")}
+              >
                 <AddCircleOutlineIcon />
               </IconButton>
             </div>
