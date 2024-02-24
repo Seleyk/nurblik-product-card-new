@@ -14,14 +14,18 @@ import CardDetails from "./pages/Details";
 import Navbar from "./components/Navbar";
 import Cart from "./pages/Cart";
 import Grid from "./pages/Grid";
+import NewFooter from "./pages/NewFooter";
+import Footer from "./pages/Footer";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   let location = useLocation();
 
   return (
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence initial={false}>
       <Navbar />
       <Routes location={location} key={location.pathname}>
+        <Route index path="*" element={<NotFound />} />
         <Route index path="/" element={<Home />} />
         <Route path="/singlecard" element={<SingleCard />} />
         <Route path="/login" element={<Login />} />
@@ -35,6 +39,7 @@ const App = () => {
         <Route path="/grid" element={<Grid />} /> 
         <Route path="/cart" element={<Cart />} /> 
       </Routes>
+      <NewFooter />
     </AnimatePresence>
   );
 };

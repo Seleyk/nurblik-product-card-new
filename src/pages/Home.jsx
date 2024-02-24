@@ -17,7 +17,6 @@ const Home = () => {
       <Grid />
       <Carousel />
       {isNonMobileScreen && <SliderNew />}
-      <Footer />
 
     </div>
   );
