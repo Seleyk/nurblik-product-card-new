@@ -25,6 +25,10 @@
   border-radius: 100px;
 }
 
+body {
+  background-color: #F8F7F4;
+}
+
 .item {
   @apply max-w-[350px] p-8 bg-[#f2f2f2];
 }

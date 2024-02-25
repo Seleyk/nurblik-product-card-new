@@ -16,7 +16,7 @@ const FourthSlide = () => {
       <motion.div
         whileInView={{ opacity: [0, 1], y: [70, 0] }}
         transition={{ delay: 0.6, ...transition }}
-        className=" text-center max-md:w-full uppercase w-full max-md:left-0 bottom-[450px] max-md:bottom-48 h-[298px] absolute text-black text-[60px] max-md:text-5xl font-bold tracking-[8px]"
+        className=" text-center max-md:w-full uppercase w-full max-md:left-0 bottom-[450px] max-md:bottom-48 h-[298px] absolute text-black text-[60px] max-md:text-3xl font-bold tracking-[8px] max-md:tracking-widest"
       >
         ski-masks
         <br />

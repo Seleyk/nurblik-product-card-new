@@ -16,9 +16,9 @@ const SecondSlide = () => {
       <motion.div
         whileInView={{ y: [50, 0], opacity: [0, 1] }}
         transition={transition}
-        className="absolute w-[705px] max-md:w-full text-center text-stone-100 text-[80px] max-md:text-5xl max-md:text-black max-md:z-10 font-bold tracking-[6.40px] right-1/4 max-md:right-0 bottom-[10%] max-md:bottom-[540px] max-md: z-40"
+        className="absolute w-[705px] max-md:w-full text-center text-stone-100 text-[80px] max-md:text-3xl max-md:text-black max-md:z-10 font-bold tracking-[6.40px] right-1/4 max-md:right-0 bottom-[10%] max-md:top-[10%] max-md: z-40 max-md:tracking-widest"
       >
-        THE TECHWEAR COLLECTION IS HERE
+        THE TECHWEAR <br /> COLLECTION IS <br /> HERE
       </motion.div>
     </motion.div>
   );

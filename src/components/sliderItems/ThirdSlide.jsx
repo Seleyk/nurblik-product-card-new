@@ -16,7 +16,7 @@ const ThirdSlide = () => {
       <motion.div
         whileInView={{ opacity: [0, 1], x: [0, 16] }}
         transition={{delay: .75, ...transition}}
-        className="z-10 uppercase left-10 max-md:left-1 bottom-96 max-md:bottom-60 h-[298px] absolute text-black text-[80px] max-md:text-5xl font-bold tracking-[8px]"
+        className="z-10 uppercase left-10 max-md:left-1 bottom-96 max-md:bottom-60 h-[298px] absolute text-black text-[80px] max-md:text-3xl font-bold tracking-[8px] max-md:tracking-widest"
       >
         Windbreakers
         <br />
@@ -25,7 +25,7 @@ const ThirdSlide = () => {
       <motion.div
         whileInView={{ opacity: [0, 1], x: [0, -40] }}
         transition={{delay: .75, ...transition}}
-        className="uppercase right-10 max-md:right-1 bottom-0 max-md:bottom-0 max-md:z-30 h-[298px] max-md:h-[240px] absolute text-black text-[80px] max-md:text-5xl font-bold tracking-[8px]"
+        className="uppercase right-10 max-md:right-1 bottom-0 max-md:bottom-0 max-md:z-30 h-[298px] max-md:h-[240px] absolute text-black text-[80px] max-md:text-3xl font-bold tracking-[8px] max-md:tracking-widest"
       >
         50% off
       </motion.div>

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const FirstSlide = () => {
-  const transition = { duration: 4 , ease: [0.43, 0.13, 0.23, 0.96] };
+  const transition = { duration: 4, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
     <motion.div className="h-full relative bg-[#E3E2DF] overflow-hidden">
@@ -14,11 +14,13 @@ const FirstSlide = () => {
       <motion.div
         whileInView={{ opacity: [0, 1] }}
         transition={transition}
-        className="w-[633px] left-40 max-md:left-7 bottom-48 max-md:bottom-80 h-[298px] absolute text-black text-[80px] max-md:text-5xl font-bold tracking-[8px]"
+        className="w-[633px] left-40 max-md:left-7 bottom-48 max-md:bottom-80 h-[298px] absolute text-black text-[80px] max-md:text-3xl font-bold tracking-[8px] max-md:tracking-widest "
       >
         SHOP
         <br />
-        THE FALL COLLECTION
+        THE FALL
+        <br />
+        COLLECTION
       </motion.div>
     </motion.div>
   );
