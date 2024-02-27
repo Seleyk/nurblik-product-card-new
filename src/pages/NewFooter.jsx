@@ -7,7 +7,7 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 
 const NewFooter = () => {
   return (
-    <div className="mt-40">
+    <div className="">
       <div
         className="bg-[#efefef] text-[#6a6a6a] flex max-md:flex-col flex-row justify-between max-md:gap-14 gap-20 mx-0 my-auto max-md:px-9 max-md:py-6 px-[75px] py-20  "
       >
