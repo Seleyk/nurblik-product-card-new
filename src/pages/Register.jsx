@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
+import { Box } from "@mui/material";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full h-[100vh]">
+    <div className="w-full relative">
       <video
         className="w-full h-full object-cover absolute -z-10"
         src="/assets/loginvid.mp4"
@@ -22,9 +23,9 @@ const Register = () => {
         muted
         loop
       />
-      <div className="h-full px-32 flex items-center justify-start">
-        <div className="bg-[#F8F7F4] bg-opacity-95 flex flex-col gap-6 w-[480px] p-8 rounded-3xl ">
-          <div className="flex flex-col items-center gap-1 inline-flex">
+      <div className="h-full w-full px-32 max-md:w-full max-md:p-0 flex items-center justify-end ">
+        <div className="bg-[#F8F7F4] bg-opacity-95 flex flex-col gap-6 w-[480px] p-8 max-md:h-full max-md:w-full max-md:rounded-[0] max-md:pt-20 rounded-3xl ">
+        <div className="flex flex-col items-center gap-1 ">
             <h1 className="text-black text-[32px] font-semibold tracking-wider">
               Sign up
             </h1>
@@ -44,7 +45,7 @@ const Register = () => {
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-2 mb-1"
               >
-                <div className="flex flex-row gap-2 mb-1">
+                <Box className="flex flex-row gap-2 mb-1">
                   <TextField
                     required
                     name="firstName"
@@ -64,7 +65,7 @@ const Register = () => {
                     autoFocus
                     onChange={(e) => setFirstName(e.target.value)}
                   />
-                </div>
+                </Box>
                 <TextField
                   required
                   name="email"
