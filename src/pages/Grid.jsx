@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@mui/material";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Grid = () => {
@@ -51,7 +51,7 @@ const Grid = () => {
               <motion.img
                 whileHover={{ scale: 1.2 }}
                 transition={{ delay: 0.25, ...transition2 }}
-                src="https://i.pinimg.com/564x/a3/a7/df/a3a7df081d8ab8ef3ca350d44fa903f2.jpg"
+                src="/assets/grid1.jpg"
                 alt=""
                 className="h-full w-full bg-cover bg-no-repeat"
               />
@@ -245,7 +245,7 @@ const Grid = () => {
         </div>
         <img
           src="/assets/grid.jpg"
-          alt=""
+                alt=""
           className="h-full w-full bg-cover bg-no-repeat"
         />
       </div>

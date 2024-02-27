@@ -1,5 +1,4 @@
-import { Button, TextField, useMediaQuery } from "@mui/material";
-import { Box } from "@mui/system";
+import { Button, TextField } from "@mui/material";
 import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -7,8 +6,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 
 const NewFooter = () => {
-  const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
-
   return (
     <div className="mt-40">
       <div

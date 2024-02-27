@@ -66,8 +66,6 @@ const CardDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
 
-  console.log(quantity);
-
   const activeImageIndex = wrap(0, items.length, imageCount);
 
   const handleQuantity = (type) => {

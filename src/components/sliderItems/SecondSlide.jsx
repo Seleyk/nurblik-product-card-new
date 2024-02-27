@@ -5,7 +5,7 @@ const SecondSlide = () => {
   const transition = { duration: 2, ease: [0.43, 0.13, 0.23, 0.96] };
 
   return (
-    <motion.div className="relative h-[110vh] bg-gray-500">
+    <motion.div className="relative h-[110vh] bg-[#7B7C7D]">
       <div className="w-full absolute bottom-10 max-md:bottom-0 flex justify-center max-md:w-full">
         <img
           className=" w-[566px] max-md:bottom-0 z-20"
