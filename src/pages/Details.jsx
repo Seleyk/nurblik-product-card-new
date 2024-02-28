@@ -253,20 +253,25 @@ const CardDetails = () => {
             transition={{ delay: 3, ...sliderTransition }}
             className=""
           >
-            <div className="flex flex-row gap-2 items-center mb-2">
-              <IconButton
-                variant="secondary"
-                onClick={() => handleQuantity("dec")}
-              >
-                <RemoveCircleOutlineIcon />
-              </IconButton>
-              <div className="">{quantity}</div>
-              <IconButton
-                variant="standard"
-                onClick={() => handleQuantity("inc")}
-              >
-                <AddCircleOutlineIcon />
-              </IconButton>
+            <div className="flex justify-between items-center mb-2">
+              <div className="flex flex-row gap-2 items-center">
+                <IconButton
+                  variant="secondary"
+                  onClick={() => handleQuantity("dec")}
+                >
+                  <RemoveCircleOutlineIcon />
+                </IconButton>
+                <div className="">{quantity}</div>
+                <IconButton
+                  variant="standard"
+                  onClick={() => handleQuantity("inc")}
+                >
+                  <AddCircleOutlineIcon />
+                </IconButton>
+              </div>
+              <button className="">
+                <img width={25} src="/assets/heart.svg" alt="H" />
+              </button>
             </div>
             <div className="item-select-container flex w-full gap-4">
               <motion.nav

@@ -8,26 +8,18 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 const NewFooter = () => {
   return (
     <div className="">
-      <div
-        className="bg-[#efefef] text-[#6a6a6a] flex max-md:flex-col flex-row justify-between max-md:gap-14 gap-20 mx-0 my-auto max-md:px-9 max-md:py-6 px-[75px] py-20  "
-      >
-        <div
-          className="flex-1 flex flex-col"
-        >
-          <h2
-            className="text-[#000000] font-medium text-3xl tracking-wide mb-5 uppercase"
-          >
+      <div className="bg-[#efefef] text-[#6a6a6a] flex max-md:flex-col flex-row justify-between max-md:gap-14 gap-20 mx-0 my-auto max-md:px-9 max-md:py-6 px-[75px] py-20  ">
+        <div className="flex-1 flex flex-col">
+          <h2 className="text-[#000000] font-medium text-3xl tracking-wide mb-5 uppercase">
             Nurblik Kouture
           </h2>
-          <p
-          className="font-normal text-base mb-4 ">
+          <p className="font-normal text-base mb-4 ">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
             humour, or randomised words which don’t look even slightly
             believable.
           </p>
-          <div
-          className="flex gap-4">
+          <div className="flex gap-4">
             <div style={{ cursor: "pointer" }}>
               <FacebookIcon />
             </div>
@@ -48,7 +40,7 @@ const NewFooter = () => {
               letterSpacing: ".2rem",
               textTransform: "uppercase",
               marginBottom: "20px",
-              color: "#000000"
+              color: "#000000",
             }}
           >
             Help
@@ -94,12 +86,11 @@ const NewFooter = () => {
               </a>
             </div>
             <div
-
               style={{
                 listStyle: "none",
                 lineHeight: 1.65,
                 marginBottom: "8px",
-              }}  
+              }}
             >
               <a
                 style={{
@@ -216,7 +207,7 @@ const NewFooter = () => {
               letterSpacing: ".2rem",
               textTransform: "uppercase",
               marginBottom: "20px",
-              color: "#000000"
+              color: "#000000",
             }}
           >
             Contact Us
@@ -233,7 +224,7 @@ const NewFooter = () => {
               letterSpacing: ".2rem",
               textTransform: "uppercase",
               marginBottom: "20px",
-              color: "#000000"
+              color: "#000000",
             }}
           >
             Newsletter

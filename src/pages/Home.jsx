@@ -4,20 +4,18 @@ import Slideshow from "./Slideshow";
 import SliderNew from "./SliderNew";
 import { useMediaQuery } from "@mui/material";
 import Grid from "./Grid";
-import Footer from "./Footer";
+import NewCarousel from "./NewCarouel";
 
 const Home = () => {
   const isNonMobileScreen = useMediaQuery("(min-width: 1000px)");
-
 
   return (
     <div>
       <Slideshow />
       <Carousel />
       <Grid />
-      <Carousel />
+      <NewCarousel />
       {isNonMobileScreen && <SliderNew />}
-
     </div>
   );
 };
