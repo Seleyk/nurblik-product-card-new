@@ -27,7 +27,7 @@ const Cart = () => {
                       <div className="text-black text-lg font-bold font-['Roboto'] tracking-widest uppercase">
                         {item.title}
                       </div>
-                      <div className="mt-1 text-[#636363] text-xs font-medium font-['Roboto'] tracking-wide uppercase">
+                      <div className="my-1 text-[#636363] text-xs font-medium font-['Roboto'] tracking-wide uppercase">
                         {["shoes", "sneakers"].map((i) => (
                           <span key={i}>
                             /<>{`${i} `}</>
@@ -49,7 +49,7 @@ const Cart = () => {
                         {`Blue`}
                       </div>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex mb-2 items-center gap-4">
                       <button className="">
                         <img width={25} src="/assets/heart.svg" alt="H" />
                       </button>
