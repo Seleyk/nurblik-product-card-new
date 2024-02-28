@@ -101,7 +101,7 @@ const CardDetails = () => {
   };
 
   return (
-    <div className="bg-[#F8F7F4]">
+    <div className="bg-[#F8F7F4] mb-20">
       <div className="details-container">
         <div className="slider-container-parent">
           <motion.div
@@ -174,7 +174,7 @@ const CardDetails = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.75, ...sliderTransition }}
-          className="flex flex-col gap-16 max-md:absolute max-md:w-full max-md:px-6 max-md:pt-6 max-md:bg-[#F8F7F4] max-md:bg-opacity-85 max-md:rounded-tl-3xl max-md:rounded-tr-3xl max-md:overflow-y-auto max-md:overflow-x-hidden max-md:bottom-1"
+          className="flex flex-col gap-16 max-md:w-full max-md:px-6 max-md:pt-6 max-md:bg-[#F8F7F4] max-md:bg-opacity-85 max-md:rounded-tl-3xl max-md:rounded-tr-3xl max-md:overflow-y-auto max-md:overflow-x-hidden max-md:bottom-1"
         >
           <div className="flex flex-col gap-6">
             <div className=" flex flex-col gap-3 max-md:gap-[6px] max-md:flex-col-reverse text-xs">

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   return (
-    <div className="pt-24 px-6 flex gap-6 max-md:flex-col">
+    <div className="py-24 px-6 flex gap-6 max-md:flex-col">
       <div className="w-[60%] max-md:w-full">
         <h1 className="text-black text-3xl font-bold font-['Roboto'] tracking-widest capitalize">
           Shopping cart ({items.length}){" "}
