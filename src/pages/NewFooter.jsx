@@ -80,7 +80,7 @@ const NewFooter = () => {
                   cursor: "pointer",
                   color: "#6a6a6a",
                 }}
-                href="/products"
+                href="/collections/men"
               >
                 Men
               </a>
@@ -99,7 +99,7 @@ const NewFooter = () => {
                   cursor: "pointer",
                   color: "#6a6a6a",
                 }}
-                href="/products"
+                href="/collections/women"
               >
                 Women
               </a>
@@ -118,7 +118,7 @@ const NewFooter = () => {
                   cursor: "pointer",
                   color: "#6a6a6a",
                 }}
-                href="/"
+                href="/profile"
               >
                 My Account{" "}
               </a>
@@ -156,9 +156,9 @@ const NewFooter = () => {
                   cursor: "pointer",
                   color: "#6a6a6a",
                 }}
-                href="/"
+                href="/profile/orders"
               >
-                Track your order
+                Track your orders
               </a>
             </div>
             <div
@@ -175,9 +175,9 @@ const NewFooter = () => {
                   cursor: "pointer",
                   color: "#6a6a6a",
                 }}
-                href="/"
+                href="/profile/favorites"
               >
-                Wishlist
+                Favorites
               </a>
             </div>
             <div
