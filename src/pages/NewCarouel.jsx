@@ -55,7 +55,7 @@ const NewCarousel = () => {
               <motion.div
                 key={item.id}
                 layout
-                className="flex flex-col gap-1)"
+                className="flex flex-col gap-1"
                 exit={{ opacity: 0 }}
                 whileInView={{ y: [50, 0], opacity: [0, 1] }}
                 transition={{ delay: 0.05, ...transition }}
