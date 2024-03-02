@@ -177,7 +177,7 @@ const CardDetails = () => {
           className="flex flex-col gap-16 max-md:w-full max-md:px-6 max-md:pt-6 max-md:bg-[#F8F7F4] max-md:bg-opacity-85 max-md:rounded-tl-3xl max-md:rounded-tr-3xl max-md:overflow-x-hidden max-md:overflow-y-auto max-md:bottom-1 max-md:absolute max-md:opacity-60"
         >
           <div className="flex flex-col gap-6">
-            <div className=" flex flex-col gap-3 max-md:gap-[6px] max-md:flex-col-reverse text-xs">
+            <div className="flex flex-col gap-3 max-md:gap-[6px] max-md:flex-col-reverse text-xs">
               <motion.div
                 initial={
                   isNonMobileScreen
