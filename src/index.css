@@ -169,11 +169,11 @@ li {
 }
 
 .slider {
-  @apply relative w-full h-full overflow-hidden;
+  @apply relative w-full h-full overflow-hidden max-md:h-4/5;
 }
 
 .image {
-  @apply absolute h-full w-full bg-cover bg-no-repeat bg-center hover:cursor-grab active:cursor-grabbing max-md:h-4/5;
+  @apply absolute h-full w-full bg-cover bg-no-repeat bg-center hover:cursor-grab active:cursor-grabbing;
 }
 
 .image {
