@@ -63,7 +63,7 @@ const Cards = () => {
 
   return (
     <div className="">
-      <div className="md:h-[120vh] max-md:gap-9 max-md:py-20 flex max-md:flex-col">
+      <div className="md:h-[110vh] max-md:gap-9 max-md:py-20 flex max-md:flex-col">
         <div className="h-full flex-1 flex max-md:justify-center max-md:text-center items-center md:pl-20">
           <div className="flex flex-col gap-3">
             <div className="flex flex-col">

@@ -24,7 +24,7 @@ const Cart = () => {
                 <div className="flex flex-auto justify-between max-md:flex-col ">
                   <div className="flex flex-col justify-between">
                     <div className="">
-                      <div className="text-black text-lg font-bold font-['Roboto'] tracking-widest uppercase">
+                      <div className="text-black max-md:text-base text-lg font-bold font-['Roboto'] tracking-widest uppercase">
                         {item.title}
                       </div>
                       <div className="my-1 text-[#636363] text-xs font-medium font-['Roboto'] tracking-wide uppercase">

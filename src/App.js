@@ -32,12 +32,12 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/details" element={<CardDetails />} />
         <Route path="/collections/:id" element={<Cards />} />
-        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/carousel/" element={<Carousel />} />
         <Route path="/slider/" element={<SliderNew />} />
         <Route path="/slideshow" element={<Slideshow />} /> 
         <Route path="/grid" element={<Grid />} /> 
-        <Route path="/cart" element={<Cart />} /> 
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <NewFooter />
     </AnimatePresence>
