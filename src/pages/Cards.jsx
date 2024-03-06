@@ -63,18 +63,18 @@ const Cards = () => {
 
   return (
     <div className="">
-      <div className="h-[120vh] flex">
-        <div className="h-full flex-1 flex items-center pl-20">
+      <div className="md:h-[120vh] max-md:gap-9 max-md:py-20 flex max-md:flex-col">
+        <div className="h-full flex-1 flex max-md:justify-center max-md:text-center items-center md:pl-20">
           <div className="flex flex-col gap-3">
             <div className="flex flex-col">
-              <h1 className=" text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
+              <h1 className=" text-black max-md:text-2xl  text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
                 Shop the {`"off-white"`}
               </h1>
-              <h1 className="text-black text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
+              <h1 className="text-black max-md:text-2xl text-4xl font-medium font-['Roboto'] tracking-widest uppercase">
                 collection
               </h1>
             </div>
-            <h1 className="self-center text-md font-[300] uppercase max-w-lg">
+            <h1 className="self-center max-md:text-sm text-md font-[300] uppercase max-w-lg">
               Our best collection of Lorem ipsum yet! with a new dolor sit amet,
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua. Consectetur a erat nam at lectus
@@ -82,11 +82,11 @@ const Cards = () => {
             </h1>
           </div>
         </div>
-        <div className="h-full flex-1 flex items-center pl-20">
-          <div className="w-full h-[502px] bg-black rounded-l-full relative">
+        <div className="h-full flex-1 flex items-center md:pl-20">
+          <div className="w-full max-md:h-[258px] h-[502px] bg-black md:rounded-l-full relative">
             <video
               src="/assets/video.mp4"
-              className="w-full h-full object-cover absolute rounded-l-full"
+              className="w-full h-full object-cover absolute md:rounded-l-full"
               alt=""
               autoPlay
               muted
