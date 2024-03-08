@@ -173,12 +173,15 @@ const Grid = () => {
               </button>
             </Link>
           </div>
-          <motion.img
+          <motion.video
             whileHover={{ scale: 1.2 }}
             transition={{ delay: 0.25, ...transition2 }}
-            src="/assets/grid.jpg"
+            src="/assets/TechwearVid.mp4"
             alt=""
-            className="h-full w-full bg-cover bg-no-repeat"
+            className="w-full h-full object-cover absolute"
+            autoPlay
+            muted
+            loop
           />
         </motion.div>
       </div>
@@ -243,10 +246,15 @@ const Grid = () => {
             </button>
           </Link>
         </div>
-        <img
-          src="/assets/grid.jpg"
-                alt=""
-          className="h-full w-full bg-cover bg-no-repeat"
+        <motion.video
+          whileHover={{ scale: 1.2 }}
+          transition={{ delay: 0.25, ...transition2 }}
+          src="/assets/TechwearVid.mp4"
+          alt=""
+          className="w-full h-full object-cover absolute"
+          autoPlay
+          muted
+          loop
         />
       </div>
       <div className="h-[103dvh] relative bg-slate-300">
