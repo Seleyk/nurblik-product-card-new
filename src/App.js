@@ -17,6 +17,7 @@ import Grid from "./pages/Grid";
 import NewFooter from "./pages/NewFooter";
 import Footer from "./pages/Footer";
 import NotFound from "./pages/NotFound";
+import Success from "./pages/Success";
 
 const App = () => {
   let location = useLocation();
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/slideshow" element={<Slideshow />} /> 
         <Route path="/grid" element={<Grid />} /> 
         <Route path="/cart" element={<Cart />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
       <NewFooter />
     </AnimatePresence>

@@ -3,81 +3,88 @@ import { items } from "../data";
 import { NavLink } from "react-router-dom";
 
 const Cart = () => {
+  const isCart = false;
+
   return (
     <div className="py-24 px-6 flex gap-6 max-md:flex-col">
       <div className="w-[60%] max-md:w-full">
         <h1 className="text-black text-3xl font-bold font-['Roboto'] tracking-widest capitalize">
           Shopping cart ({items.length}){" "}
         </h1>
-        <div className="mt-8">
-          {items.map((item) => (
-            <div key={item.id}>
-              <div className="flex gap-4 mt-4">
-                <NavLink to={`/details`}>
-                  <div
-                    style={{
-                      backgroundImage: `url(${item.img})`,
-                    }}
-                    className="h-[158px] min-w-[155px] rounded-xl bg-cover bg-no-repeat bg-center "
-                  />
-                </NavLink>
-                <div className="flex flex-auto justify-between max-md:flex-col ">
-                  <div className="flex flex-col justify-between">
-                    <div className="">
-                      <div className="text-black max-md:text-base text-lg font-bold font-['Roboto'] tracking-widest uppercase">
-                        {item.title}
+        {isCart ? (
+          <div className="mt-8">
+            {items?.map((item) => (
+              <div key={item.id}>
+                <div className="flex gap-4 mt-4">
+                  <NavLink to={`/details`}>
+                    <div
+                      style={{
+                        backgroundImage: `url(${item.img})`,
+                      }}
+                      className="h-[158px] min-w-[155px] rounded-xl bg-cover bg-no-repeat bg-center "
+                    />
+                  </NavLink>
+                  <div className="flex flex-auto justify-between max-md:flex-col ">
+                    <div className="flex flex-col justify-between">
+                      <div className="">
+                        <div className="text-black max-md:text-base text-lg font-bold font-['Roboto'] tracking-widest uppercase">
+                          {item.title}
+                        </div>
+                        <div className="my-1 text-[#636363] text-xs font-medium font-['Roboto'] tracking-wide uppercase">
+                          {["shoes", "sneakers"].map((i) => (
+                            <span key={i}>
+                              /<>{`${i} `}</>
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                      <div className="my-1 text-[#636363] text-xs font-medium font-['Roboto'] tracking-wide uppercase">
-                        {["shoes", "sneakers"].map((i) => (
-                          <span key={i}>
-                            /<>{`${i} `}</>
-                          </span>
-                        ))}
+                      <div className="flex max-md:flex-row flex-col gap-2 max-md:mb-2">
+                        <div className="text-xs font-medium font-['Roboto'] tracking-wide capitalize">
+                          <span className="text-[#636363] capitalize">
+                            Color:
+                          </span>{" "}
+                          {`Blue`}
+                        </div>
+                        <div className="text-xs font-medium font-['Roboto'] tracking-wide capitalize">
+                          <span className="text-[#636363] capitalize">
+                            Color:
+                          </span>{" "}
+                          {`Blue`}
+                        </div>
+                      </div>
+                      <div className="flex mb-2 items-center gap-4">
+                        <button className="">
+                          <img width={25} src="/assets/heart.svg" alt="H" />
+                        </button>
+                        <button className="">
+                          <img width={25} src="/assets/trash.svg" alt="T" />
+                        </button>
                       </div>
                     </div>
-                    <div className="flex max-md:flex-row flex-col gap-2 max-md:mb-2">
-                      <div className="text-xs font-medium font-['Roboto'] tracking-wide capitalize">
-                        <span className="text-[#636363] capitalize">
-                          Color:
-                        </span>{" "}
-                        {`Blue`}
+                    <div className="flex items-end justify-between max-md:flex-row-reverse max-md:items-center flex-col">
+                      <div className="text-black text-lg font-bold font-['Roboto'] tracking-widest">
+                        ${item.price / 100}
                       </div>
-                      <div className="text-xs font-medium font-['Roboto'] tracking-wide capitalize">
-                        <span className="text-[#636363] capitalize">
-                          Color:
-                        </span>{" "}
-                        {`Blue`}
+                      <div className="flex gap-3">
+                        <button className="">
+                          <img width={20} src="/assets/minus.svg" alt="-" />
+                        </button>
+                        <div className="text-sm font-medium">2</div>
+                        <button className="">
+                          <img width={20} src="/assets/plus.svg" alt="+" />
+                        </button>
                       </div>
-                    </div>
-                    <div className="flex mb-2 items-center gap-4">
-                      <button className="">
-                        <img width={25} src="/assets/heart.svg" alt="H" />
-                      </button>
-                      <button className="">
-                        <img width={25} src="/assets/trash.svg" alt="T" />
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex items-end justify-between max-md:flex-row-reverse max-md:items-center flex-col">
-                    <div className="text-black text-lg font-bold font-['Roboto'] tracking-widest">
-                      ${item.price / 100}
-                    </div>
-                    <div className="flex gap-3">
-                      <button className="">
-                        <img width={20} src="/assets/minus.svg" alt="-" />
-                      </button>
-                      <div className="text-sm font-medium">2</div>
-                      <button className="">
-                        <img width={20} src="/assets/plus.svg" alt="+" />
-                      </button>
                     </div>
                   </div>
                 </div>
+                <div className="bg-black h-[1.5px] w-full mt-4"></div>
               </div>
-              <div className="bg-black h-[1.5px] w-full mt-4"></div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-8"> <div className="text-center text-4xl max-md:text-xl font-bold tracking-wide self-center mb-20 px-8">Your Shopping Cart
+          is empty. Add some clothes and get started</div> </div>
+        )}
       </div>
       <div className="w-[40%] max-md:w-full mb-4">
         <h1 className="max-md:text-center text-black text-3xl font-bold font-['Roboto'] tracking-widest">
@@ -120,7 +127,7 @@ const Cart = () => {
             </span>
           </div>
           <button className="cta">
-            <span className="cta-txt">Checkout</span>
+            <a href="/success"><span className="cta-txt">Checkout</span></a>
           </button>
         </div>
       </div>
