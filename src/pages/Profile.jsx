@@ -84,7 +84,7 @@ const Profile = () => {
           <div className=" bg-[#FFFDFA] p-4 border-solid border-2 flex-1 rounded-3xl h-40 flex flex-col gap-2 overflow-hidden">
             <div className="flex items-center justify-between">
               <div className="flex gap-2">
-                <img src="/assets/bag.svg" alt="8" width={24} />
+                <img src="/assets/bag.svg" alt="8" width={20} />
                 <div className="text-2xl max-lg:text-lg font-semibold tracking-wide capitalize">
                   Your Orders
                 </div>
@@ -168,6 +168,128 @@ const Profile = () => {
           </div>
           <div className="font-normal text-base capitalize hover:underline cursor-pointer">
             All Orders (0)
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className=" bg-[#FFFDFA] md:h-40 h-80 p-4 border-solid border-2 flex-1 rounded-3xl flex flex-col gap-2 overflow-hidden">
+            <div className="flex justify-between text-2xl max-md:text-lg font-semibold">
+              <div className="capitalize">order: {items[0].id}</div>
+              <div className="">${items[2].price / 100}</div>
+            </div>
+            <div className="flex items-start md:justify-between max-md:flex-col max-md:gap-4">
+              <div className="text-md font-normal">Order Date: 05/10/2020</div>
+              <div className="flex gap-2">
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[0].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[1].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[2].img} className="image rounded-lg" alt="" />
+                </div>
+                { isNonMobileScreen ? <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[3].img} className="image rounded-lg" alt="" />
+                </div>: <div className="flex items-center text-lg font-semibold">+ 20</div> }
+              </div>
+            </div>
+            <div className="text-xs font-normal">Status: Out for delivery</div>
+          </div>
+          <div className=" bg-[#FFFDFA] md:h-40 h-80 p-4 border-solid border-2 flex-1 rounded-3xl flex flex-col gap-2 overflow-hidden">
+            <div className="flex justify-between text-2xl max-md:text-lg font-semibold">
+              <div className="capitalize">order: {items[0].id}</div>
+              <div className="">${items[2].price / 100}</div>
+            </div>
+            <div className="flex items-start md:justify-between max-md:flex-col max-md:gap-4">
+              <div className="text-md font-normal">Order Date: 05/10/2020</div>
+              <div className="flex gap-2">
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[0].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[1].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[2].img} className="image rounded-lg" alt="" />
+                </div>
+                { isNonMobileScreen ? <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[3].img} className="image rounded-lg" alt="" />
+                </div>: <div className="flex items-center text-lg font-semibold">+ 20</div> }
+              </div>
+            </div>
+            <div className="text-xs font-normal">Status: Out for delivery</div>
+          </div>
+          <div className=" bg-[#FFFDFA] md:h-40 h-80 p-4 border-solid border-2 flex-1 rounded-3xl flex flex-col gap-2 overflow-hidden">
+            <div className="flex justify-between text-2xl max-md:text-lg font-semibold">
+              <div className="capitalize">order: {items[0].id}</div>
+              <div className="">${items[2].price / 100}</div>
+            </div>
+            <div className="flex items-start md:justify-between max-md:flex-col max-md:gap-4">
+              <div className="text-md font-normal">Order Date: 05/10/2020</div>
+              <div className="flex gap-2">
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[0].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[1].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[2].img} className="image rounded-lg" alt="" />
+                </div>
+                { isNonMobileScreen ? <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[3].img} className="image rounded-lg" alt="" />
+                </div>: <div className="flex items-center text-lg font-semibold">+ 20</div> }
+              </div>
+            </div>
+            <div className="text-xs font-normal">Status: Out for delivery</div>
+          </div>
+          <div className=" bg-[#FFFDFA] md:h-40 h-80 p-4 border-solid border-2 flex-1 rounded-3xl flex flex-col gap-2 overflow-hidden">
+            <div className="flex justify-between text-2xl max-md:text-xl font-semibold">
+              <div className="capitalize">order: {items[0].id}</div>
+              <div className="">${items[2].price / 100}</div>
+            </div>
+            <div className="flex items-start md:justify-between max-md:flex-col max-md:gap-4">
+              <div className="text-md font-normal">Order Date: 05/10/2020</div>
+              <div className="flex gap-2">
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[0].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[1].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[2].img} className="image rounded-lg" alt="" />
+                </div>
+                { isNonMobileScreen ? <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[3].img} className="image rounded-lg" alt="" />
+                </div>: <div className="flex items-center text-lg font-semibold">+ 20</div> }
+              </div>
+            </div>
+            <div className="text-xs font-normal">Status: Out for delivery</div>
+          </div>
+          <div className=" bg-[#FFFDFA] md:h-40 h-80 p-4 border-solid border-2 flex-1 rounded-3xl flex flex-col gap-2 overflow-hidden">
+            <div className="flex justify-between text-2xl max-md:text-lg font-semibold">
+              <div className="capitalize">order: {items[0].id}</div>
+              <div className="">${items[2].price / 100}</div>
+            </div>
+            <div className="flex items-start md:justify-between max-md:flex-col max-md:gap-4">
+              <div className="text-md font-normal">Order Date: 05/10/2020</div>
+              <div className="flex gap-2">
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[0].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[1].img} className="image rounded-lg" alt="" />
+                </div>
+                <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[2].img} className="image rounded-lg" alt="" />
+                </div>
+                { isNonMobileScreen ? <div className="bg-black w-16 h-20 rounded-lg relative">
+                  <img src={items[3].img} className="image rounded-lg" alt="" />
+                </div>: <div className="flex items-center text-lg font-semibold">+ 20</div> }
+              </div>
+            </div>
+            <div className="text-xs font-normal">Status: Out for delivery</div>
           </div>
         </div>
       </div>
