@@ -50,7 +50,7 @@ const Success = () => {
                   <div className="flex-1">seleysteven@gmail.com</div>
                 </div>
               </div>
-              <div className="flex gap-1">
+              <div className="flex gap-1 items-end">
                 <div className="flex-1">
                   <button className="cta uppercase">
                     <a href="/profile">
